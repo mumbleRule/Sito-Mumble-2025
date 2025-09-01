@@ -121,9 +121,6 @@
       </div>
     </section>
 
-    <!-- Sezione Come lavoriamo -->
-    <WorkProcessSection />
-
     <!-- Sezione CTA finale -->
     <section class="projects-cta-section">
       <div class="container">
@@ -150,7 +147,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 import { apiService } from '../services/api.js'
-import WorkProcessSection from '../components/WorkProcessSection.vue'
 
 const projects = ref([])
 const loading = ref(true)

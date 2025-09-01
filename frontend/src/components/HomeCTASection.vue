@@ -23,27 +23,9 @@
 
 <style scoped>
 .home-cta-section {
-  background: linear-gradient(135deg, var(--sage) 0%, var(--warm-clay) 100%);
+  background: var(--bg);
   padding: 80px 0;
   width: 100%;
-  position: relative;
-  overflow: hidden;
-}
-
-.home-cta-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.95);
-  z-index: 1;
-}
-
-.container {
-  position: relative;
-  z-index: 2;
 }
 
 .home-cta {
