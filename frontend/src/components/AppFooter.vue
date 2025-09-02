@@ -16,13 +16,8 @@
             Trasformiamo le tue idee in soluzioni digitali efficaci.
           </p>
           <div class="footer-contact-info">
-            <a href="mailto:info@mumble.group" class="contact-item">
-              <span class="contact-icon">✉</span>
+            <a href="mailto:info@mumble.group" class="contact-item email-contact">
               <span class="contact-text">info@mumble.group</span>
-            </a>
-            <a href="tel:+39123456789" class="contact-item">
-              <span class="contact-icon">📞</span>
-              <span class="contact-text">+39 123 456 789</span>
             </a>
           </div>
         </div>
@@ -33,22 +28,22 @@
           <div class="footer-subsection">
             <h5>Sviluppo</h5>
             <ul class="footer-links">
-              <li><a href="/servizi#development">Development</a></li>
-              <li><a href="/servizi#webapp-ux">Web App & UX/UI</a></li>
+              <li><a href="/servizi#sviluppo">Development</a></li>
+              <li><a href="/servizi#sviluppo">Web App & UX/UI</a></li>
             </ul>
           </div>
           <div class="footer-subsection">
             <h5>Integrazione</h5>
             <ul class="footer-links">
-              <li><a href="/servizi#api-integration">Integrazioni API</a></li>
-              <li><a href="/servizi#portali">Portali & Piattaforme</a></li>
+              <li><a href="/servizi#integrazione">Integrazioni API</a></li>
+              <li><a href="/servizi#integrazione">Portali & Piattaforme</a></li>
             </ul>
           </div>
           <div class="footer-subsection">
             <h5>Gestione</h5>
             <ul class="footer-links">
-              <li><a href="/servizi#crm-erp">CRM e ERP</a></li>
-              <li><a href="/servizi#business-intelligence">Business Intelligence</a></li>
+              <li><a href="/servizi#gestione">CRM e ERP</a></li>
+              <li><a href="/servizi#gestione">Business Intelligence</a></li>
             </ul>
           </div>
         </div>
@@ -57,12 +52,9 @@
         <div class="footer-section">
           <h4 class="footer-section-title">Progetti</h4>
           <ul class="footer-links">
-            <li><a href="/progetti/hoteltarget">HotelTarget</a></li>
-            <li><a href="/progetti/vinovero">Vinovero</a></li>
-            <li><a href="/progetti/pinbowl">Pinbowl</a></li>
-            <li><a href="/progetti/if65">IF65</a></li>
-            <li><a href="/progetti/crejob">CreJob</a></li>
-            <li><a href="/progetti/roda">Roda</a></li>
+            <li><a href="/progetti#business-management">Business Management</a></li>
+            <li><a href="/progetti#ecommerce-marketplace">E-commerce & Marketplace</a></li>
+            <li><a href="/progetti#entertainment-leisure">Entertainment & Leisure</a></li>
           </ul>
           <div class="footer-cta">
             <router-link to="/progetti" class="footer-cta-link">
@@ -75,9 +67,8 @@
         <div class="footer-section">
           <h4 class="footer-section-title">Azienda</h4>
           <ul class="footer-links">
-            <li><a href="/chi-siamo">Chi siamo</a></li>
-            <li><a href="/processo">Il nostro processo</a></li>
-            <li><a href="/tecnologie">Tecnologie</a></li>
+            <li><a href="/progetti#metodologia">Il nostro processo</a></li>
+            <li><a href="/progetti#tecnologie">Tecnologie</a></li>
             <li><a href="/contatti">Contatti</a></li>
           </ul>
 
@@ -89,9 +80,6 @@
               </a>
               <a href="#" class="social-link" aria-label="GitHub">
                 <span class="social-icon">🔗</span>
-              </a>
-              <a href="#" class="social-link" aria-label="Email">
-                <span class="social-icon">✉️</span>
               </a>
             </div>
           </div>
@@ -259,6 +247,15 @@ onMounted(async () => {
 
 .contact-item:hover {
   color: #fff;
+}
+
+/* Email contact specifico con hover warm clay */
+.email-contact {
+  font-weight: 600;
+}
+
+.email-contact:hover {
+  color: var(--warm-clay) !important;
 }
 
 .contact-icon {

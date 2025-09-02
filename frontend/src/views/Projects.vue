@@ -27,52 +27,112 @@
             </div>
           </div>
 
-          <div v-else class="projects-grid">
-            <router-link
-              v-for="(project, index) in projects"
-              :key="project.id"
-              :to="`/progetti/${project.id}`"
-              class="project-card fade-in"
-              :class="getCardVariant(index)"
-              :style="{ animationDelay: `${index * 0.1}s` }"
-            >
-              <div
-                class="project-card-image"
-                :style="getImageStyle(project.title)"
-              >
-                <div class="project-card-overlay">
-                  <h3>{{ project.title }}</h3>
-                  <p class="project-category" v-if="project.category">{{ project.category }}</p>
-                </div>
+          <div v-else class="projects-by-category">
+            <!-- Business Management -->
+            <div id="business-management" class="category-section">
+              <div class="category-header">
+                <div class="category-tag sage">Business Management</div>
+                <h2>Gestione aziendale e processi</h2>
+                <p>Soluzioni per ottimizzare operazioni, gestire risorse e automatizzare processi aziendali complessi.</p>
               </div>
-
-              <div class="project-card-content">
-                <p class="project-description">{{ getShortDescription(project.description) }}</p>
-
-                <div class="project-tech" v-if="project.technologies">
-                  <span
-                    v-for="tech in getTechnologies(project.technologies)"
-                    :key="tech"
-                    class="tech-tag"
-                  >
-                    {{ tech }}
-                  </span>
-                </div>
-
-                <div v-if="project.url" class="project-link">
-                  <a :href="project.url" target="_blank" class="btn secondary">
-                    Visita progetto
-                  </a>
-                </div>
+              <div class="projects-grid">
+                <router-link
+                  v-for="(project, index) in businessManagementProjects"
+                  :key="project.id"
+                  :to="`/progetti/${project.id}`"
+                  class="project-card fade-in"
+                  :style="{ animationDelay: `${index * 0.1}s` }"
+                >
+                  <div class="project-card-image" :style="getImageStyle(project.title)">
+                    <div class="project-card-overlay">
+                      <h3>{{ project.title }}</h3>
+                      <p class="project-category" v-if="project.category">{{ project.category }}</p>
+                    </div>
+                  </div>
+                  <div class="project-card-content">
+                    <p class="project-description">{{ getShortDescription(project.description) }}</p>
+                    <div class="project-tech" v-if="project.technologies">
+                      <span v-for="tech in getTechnologies(project.technologies)" :key="tech" class="tech-tag">
+                        {{ tech }}
+                      </span>
+                    </div>
+                  </div>
+                </router-link>
               </div>
-            </router-link>
+            </div>
+
+            <!-- E-commerce & Marketplace -->
+            <div id="ecommerce-marketplace" class="category-section">
+              <div class="category-header">
+                <div class="category-tag warm-clay">E-commerce & Marketplace</div>
+                <h2>Piattaforme di vendita e marketplace</h2>
+                <p>Ecosistemi digitali per vendita online, marketplace e piattaforme che connettono domanda e offerta.</p>
+              </div>
+              <div class="projects-grid">
+                <router-link
+                  v-for="(project, index) in ecommerceProjects"
+                  :key="project.id"
+                  :to="`/progetti/${project.id}`"
+                  class="project-card fade-in"
+                  :style="{ animationDelay: `${index * 0.1}s` }"
+                >
+                  <div class="project-card-image" :style="getImageStyle(project.title)">
+                    <div class="project-card-overlay">
+                      <h3>{{ project.title }}</h3>
+                      <p class="project-category" v-if="project.category">{{ project.category }}</p>
+                    </div>
+                  </div>
+                  <div class="project-card-content">
+                    <p class="project-description">{{ getShortDescription(project.description) }}</p>
+                    <div class="project-tech" v-if="project.technologies">
+                      <span v-for="tech in getTechnologies(project.technologies)" :key="tech" class="tech-tag">
+                        {{ tech }}
+                      </span>
+                    </div>
+                  </div>
+                </router-link>
+              </div>
+            </div>
+
+            <!-- Entertainment & Leisure -->
+            <div id="entertainment-leisure" class="category-section">
+              <div class="category-header">
+                <div class="category-tag muted">Entertainment & Leisure</div>
+                <h2>Intrattenimento e tempo libero</h2>
+                <p>Applicazioni per il divertimento, gestione eventi e esperienze coinvolgenti per gli utenti.</p>
+              </div>
+              <div class="projects-grid">
+                <router-link
+                  v-for="(project, index) in entertainmentProjects"
+                  :key="project.id"
+                  :to="`/progetti/${project.id}`"
+                  class="project-card fade-in"
+                  :style="{ animationDelay: `${index * 0.1}s` }"
+                >
+                  <div class="project-card-image" :style="getImageStyle(project.title)">
+                    <div class="project-card-overlay">
+                      <h3>{{ project.title }}</h3>
+                      <p class="project-category" v-if="project.category">{{ project.category }}</p>
+                    </div>
+                  </div>
+                  <div class="project-card-content">
+                    <p class="project-description">{{ getShortDescription(project.description) }}</p>
+                    <div class="project-tech" v-if="project.technologies">
+                      <span v-for="tech in getTechnologies(project.technologies)" :key="tech" class="tech-tag">
+                        {{ tech }}
+                      </span>
+                    </div>
+                  </div>
+                </router-link>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Sezione Il nostro approccio -->
-    <section class="approach-section">
+    <section id="metodologia" class="approach-section">
       <div class="container">
         <div class="approach-content">
           <div class="approach-header">
@@ -121,6 +181,81 @@
       </div>
     </section>
 
+    <!-- Sezione Tecnologie -->
+    <section id="tecnologie" class="tech-section">
+      <div class="container">
+        <div class="tech-content">
+          <div class="tech-header">
+            <div class="eyebrow font-mono">Tecnologie</div>
+            <h2>Il nostro stack</h2>
+            <p class="tech-lead">
+              Utilizziamo tecnologie moderne e affidabili per creare soluzioni <strong>scalabili</strong>, <strong>performanti</strong> e <strong>sicure</strong>.
+            </p>
+          </div>
+
+          <div class="tech-grid">
+                <div class="tech-logo-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="tech-logo">
+            </div>
+
+            <div class="tech-logo-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" class="tech-logo">
+            </div>
+
+            <div class="tech-logo-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js" class="tech-logo">
+            </div>
+
+            <div class="tech-logo-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nuxtjs/nuxtjs-original.svg" alt="Nuxt.js" class="tech-logo">
+            </div>
+
+            <div class="tech-logo-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="tech-logo">
+            </div>
+
+            <div class="tech-logo-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js" class="tech-logo">
+            </div>
+
+            <div class="tech-logo-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" alt="npm" class="tech-logo">
+            </div>
+
+            <div class="tech-logo-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" class="tech-logo">
+            </div>
+
+            <div class="tech-logo-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" class="tech-logo">
+            </div>
+
+            <div class="tech-logo-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis" class="tech-logo">
+            </div>
+
+            <div class="tech-logo-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="tech-logo">
+            </div>
+
+            <div class="tech-logo-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="tech-logo">
+            </div>
+
+            <div class="tech-logo-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" class="tech-logo">
+            </div>
+
+            <div class="tech-logo-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nginx/nginx-original.svg" alt="Nginx" class="tech-logo">
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Sezione CTA finale -->
     <section class="projects-cta-section">
       <div class="container">
@@ -151,8 +286,20 @@ import { apiService } from '../services/api.js'
 const projects = ref([])
 const loading = ref(true)
 
-// Array di varianti colore per le card
-const colorVariants = ['variant-muted', 'variant-sage', 'variant-warm-clay', 'variant-accent']
+// Progetti categorizzati
+const businessManagementProjects = ref([])
+const ecommerceProjects = ref([])
+const entertainmentProjects = ref([])
+
+// Mapping dei progetti per categoria
+const projectCategories = {
+  'Hotel Target': 'business',
+  'IF65': 'business',
+  'Roda': 'business',
+  'Vinovero': 'ecommerce',
+  'CreJob': 'ecommerce',
+  'Pinbowl': 'entertainment'
+}
 
 // Mapping delle immagini per progetto
 const projectImages = {
@@ -164,9 +311,11 @@ const projectImages = {
   'Roda': '/src/assets/images/roda_1.png'
 }
 
-// Funzione per ottenere la variante di colore basata sull'indice
-const getCardVariant = (index) => {
-  return colorVariants[index % colorVariants.length]
+// Funzione per categorizzare i progetti
+const categorizeProjects = (projectsList) => {
+  businessManagementProjects.value = projectsList.filter(p => projectCategories[p.title] === 'business')
+  ecommerceProjects.value = projectsList.filter(p => projectCategories[p.title] === 'ecommerce')
+  entertainmentProjects.value = projectsList.filter(p => projectCategories[p.title] === 'entertainment')
 }
 
 // Funzione per ottenere lo stile dell'immagine
@@ -199,8 +348,12 @@ onMounted(async () => {
   try {
     const data = await apiService.getProjects()
     projects.value = data
+    categorizeProjects(data)
   } catch (error) {
     console.error('Error loading projects:', error)
+    businessManagementProjects.value = []
+    ecommerceProjects.value = []
+    entertainmentProjects.value = []
   } finally {
     loading.value = false
   }
@@ -208,6 +361,15 @@ onMounted(async () => {
 </script>
 
 <style scoped>
+/* Scroll offset per navbar fissa */
+#business-management,
+#ecommerce-marketplace,
+#entertainment-leisure,
+#metodologia,
+#tecnologie {
+  scroll-margin-top: 100px;
+}
+
 .projects-page {
   min-height: 100vh;
 }
@@ -262,6 +424,64 @@ onMounted(async () => {
   font-size: 24px;
   margin-bottom: 16px;
   color: var(--fg);
+}
+
+/* Projects by Category */
+.projects-by-category {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding-bottom: 80px;
+}
+
+.category-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.category-header {
+  text-align: left;
+  max-width: 800px;
+}
+
+.category-tag {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+  display: inline-block;
+  color: white;
+}
+
+.category-tag.sage {
+  background: var(--sage);
+}
+
+.category-tag.warm-clay {
+  background: var(--warm-clay);
+}
+
+.category-tag.muted {
+  background: var(--muted);
+}
+
+.category-header h2 {
+  font-size: clamp(28px, 4vw, 36px);
+  margin: 0 0 16px;
+  font-weight: 400;
+  color: var(--fg);
+}
+
+.category-header p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
 }
 
 .projects-grid {
@@ -398,7 +618,7 @@ onMounted(async () => {
 /* Sezione Il nostro approccio */
 .approach-section {
   background: var(--chip-bg);
-  padding: 80px 0;
+  padding: 40px 0 80px;
 }
 
 .approach-content {
@@ -481,6 +701,84 @@ onMounted(async () => {
   margin: 0;
 }
 
+/* Sezione Tecnologie */
+.tech-section {
+  background: var(--bg);
+  padding: 80px 0;
+}
+
+.tech-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tech-header {
+  text-align: left;
+  margin-bottom: 60px;
+  max-width: 600px;
+}
+
+.tech-header .eyebrow {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.tech-header h2 {
+  font-size: 32px;
+  margin: 0 0 16px;
+  color: var(--fg);
+  font-family: var(--font-mono);
+}
+
+.tech-lead {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+}
+
+.tech-lead strong {
+  color: var(--fg);
+  font-weight: 700;
+}
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 16px;
+  max-width: 900px;
+}
+
+.tech-logo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.tech-logo-item:hover {
+  transform: scale(1.1);
+}
+
+.tech-logo {
+  width: 56px;
+  height: 56px;
+  transition: all 0.3s ease;
+  filter: grayscale(0.3);
+}
+
+.tech-logo-item:hover .tech-logo {
+  filter: grayscale(0);
+}
+
+/* Tech name rimosso - solo loghi */
+
+/* Griglia tecnologie - nessuna animazione */
+
 /* Sezione CTA finale */
 .projects-cta-section {
   background: var(--bg);
@@ -530,6 +828,23 @@ onMounted(async () => {
     font-size: 18px;
   }
 
+  .projects-by-category {
+    gap: 60px;
+    padding-bottom: 60px;
+  }
+
+  .category-section {
+    gap: 32px;
+  }
+
+  .category-header h2 {
+    font-size: 28px;
+  }
+
+  .category-header p {
+    font-size: 16px;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -553,7 +868,11 @@ onMounted(async () => {
   }
 
   /* Sezioni aggiuntive responsive */
-  .approach-section,
+  .approach-section {
+    padding: 30px 0 60px;
+  }
+
+  .tech-section,
   .projects-cta-section {
     padding: 60px 0;
   }
@@ -588,6 +907,25 @@ onMounted(async () => {
   .cta-buttons {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  /* Tech section responsive */
+  .tech-header {
+    margin-bottom: 40px;
+  }
+
+  .tech-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+  }
+
+  .tech-logo-item {
+    padding: 8px;
+  }
+
+  .tech-logo {
+    width: 48px;
+    height: 48px;
   }
 }
 

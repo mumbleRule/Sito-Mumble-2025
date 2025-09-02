@@ -11,9 +11,9 @@
         <router-link class="btn primary" to="/contatti">
           Parla con noi
         </router-link>
-        <a class="btn secondary" href="#services" @click.prevent="scrollToServices">
+        <router-link class="btn secondary" to="/servizi">
           Scopri servizi
-        </a>
+        </router-link>
         <router-link class="btn" to="/progetti">
           Vedi progetti
         </router-link>
@@ -53,15 +53,7 @@ const formatTitle = (title) => {
   return title.replace(/\n/g, '<br/>')
 }
 
-// Funzione per scrollare ai servizi
-const scrollToServices = () => {
-  setTimeout(() => {
-    const element = document.getElementById('services')
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }, 100)
-}
+// Funzione scrollToServices rimossa - ora "Scopri servizi" porta alla pagina dedicata
 </script>
 
 <style scoped>

@@ -37,8 +37,8 @@
           <router-link class="btn primary" to="/contatti">
             Richiedi consulenza
           </router-link>
-          <router-link class="btn secondary" to="/progetti">
-            Vedi i nostri progetti
+          <router-link class="btn secondary" to="/servizi">
+            Scopri tutti i servizi
           </router-link>
         </div>
       </div>

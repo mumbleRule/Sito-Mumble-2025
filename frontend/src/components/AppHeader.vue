@@ -12,24 +12,24 @@
           <div class="megamenu" :class="{ 'active': activeMegamenu === 'servizi' }">
             <div class="megamenu-content">
               <div class="megamenu-section">
-                <h4>Sviluppo</h4>
+                <div class="section-tag sage">Sviluppo</div>
                 <ul>
-                  <li><a href="/servizi#development">Development</a></li>
-                  <li><a href="/servizi#webapp-ux">Web App & UX/UI</a></li>
+                  <li><a href="/servizi#sviluppo">Development</a></li>
+                  <li><a href="/servizi#sviluppo">Web App & UX/UI</a></li>
                 </ul>
               </div>
               <div class="megamenu-section">
-                <h4>Integrazione</h4>
+                <div class="section-tag warm-clay">Integrazione</div>
                 <ul>
-                  <li><a href="/servizi#api-integration">Integrazioni API</a></li>
-                  <li><a href="/servizi#portali">Portali & Piattaforme</a></li>
+                  <li><a href="/servizi#integrazione">Integrazioni API</a></li>
+                  <li><a href="/servizi#integrazione">Portali & Piattaforme</a></li>
                 </ul>
               </div>
               <div class="megamenu-section">
-                <h4>Gestione</h4>
+                <div class="section-tag muted">Gestione</div>
                 <ul>
-                  <li><a href="/servizi#crm-erp">CRM e ERP</a></li>
-                  <li><a href="/servizi#business-intelligence">Business Intelligence</a></li>
+                  <li><a href="/servizi#gestione">CRM e ERP</a></li>
+                  <li><a href="/servizi#gestione">Business Intelligence</a></li>
                 </ul>
               </div>
             </div>
@@ -41,27 +41,23 @@
           <div class="megamenu" :class="{ 'active': activeMegamenu === 'progetti' }">
             <div class="megamenu-content">
               <div class="megamenu-section">
-                <h4>Progetti in Evidenza</h4>
+                <div class="section-tag sage">Progetti</div>
                 <ul>
-                  <li><a href="/progetti/hoteltarget">HotelTarget</a></li>
-                  <li><a href="/progetti/vinovero">Vinovero</a></li>
-                  <li><a href="/progetti/pinbowl">Pinbowl</a></li>
+                  <li><a href="/progetti#business-management">Business Management</a></li>
+                  <li><a href="/progetti#ecommerce-marketplace">E-commerce & Marketplace</a></li>
+                  <li><a href="/progetti#entertainment-leisure">Entertainment & Leisure</a></li>
                 </ul>
               </div>
               <div class="megamenu-section">
-                <h4>Per Settore</h4>
+                <div class="section-tag warm-clay">Metodologia</div>
                 <ul>
-                  <li><a href="/progetti?filter=hospitality">Hospitality</a></li>
-                  <li><a href="/progetti?filter=ecommerce">E-commerce</a></li>
-                  <li><a href="/progetti?filter=entertainment">Entertainment</a></li>
+                  <li><a href="/progetti#metodologia">Il nostro processo</a></li>
                 </ul>
               </div>
               <div class="megamenu-section">
-                <h4>Tecnologie</h4>
+                <div class="section-tag muted">Tecnologie</div>
                 <ul>
-                  <li><a href="/progetti?tech=django">Django</a></li>
-                  <li><a href="/progetti?tech=vue">Vue.js</a></li>
-                  <li><a href="/progetti?tech=api">API Integration</a></li>
+                  <li><a href="/progetti#tecnologie">Stack tecnologico</a></li>
                 </ul>
               </div>
             </div>
@@ -73,15 +69,19 @@
           <div class="megamenu" :class="{ 'active': activeMegamenu === 'contatti' }">
             <div class="megamenu-content">
               <div class="megamenu-section">
-                <h4>Parliamo del tuo progetto</h4>
+                <div class="section-tag sage">Parliamo del tuo progetto</div>
                 <p>Raccontaci la tua idea e troviamo insieme la soluzione migliore.</p>
                 <a href="/contatti" class="megamenu-cta">Inizia ora →</a>
               </div>
               <div class="megamenu-section">
-                <h4>Contatti Diretti</h4>
+                <div class="section-tag warm-clay">Contatti Diretti</div>
                 <ul>
-                  <li><a href="mailto:info@mumble.group">info@mumble.group</a></li>
-                  <li><a href="tel:+39123456789">+39 123 456 789</a></li>
+                  <li><a href="mailto:info@mumble.group" class="email-link">info@mumble.group</a></li>
+                </ul>
+                <div class="section-tag muted" style="margin-top: 24px;">Seguici</div>
+                <ul>
+                  <li><a href="#" target="_blank">LinkedIn</a></li>
+                  <li><a href="#" target="_blank">GitHub</a></li>
                 </ul>
               </div>
             </div>
@@ -291,14 +291,30 @@ onUnmounted(() => {
   padding: 32px;
 }
 
-.megamenu-section h4 {
+/* Section Tags */
+.section-tag {
   font-family: var(--font-mono);
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 600;
-  color: var(--fg);
-  margin: 0 0 16px;
+  padding: 6px 12px;
+  border-radius: 6px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  margin-bottom: 16px;
+  display: inline-block;
+  color: white;
+}
+
+.section-tag.sage {
+  background: var(--sage);
+}
+
+.section-tag.warm-clay {
+  background: var(--warm-clay);
+}
+
+.section-tag.muted {
+  background: var(--muted);
 }
 
 .megamenu-section ul {
@@ -325,6 +341,16 @@ onUnmounted(() => {
   color: var(--fg);
 }
 
+/* Email link specifico con hover warm clay */
+.megamenu-section .email-link {
+  color: var(--fg);
+  font-weight: 600;
+}
+
+.megamenu-section .email-link:hover {
+  color: var(--warm-clay);
+}
+
 .megamenu-section p {
   color: var(--muted);
   font-size: 14px;
@@ -333,20 +359,23 @@ onUnmounted(() => {
 }
 
 .megamenu-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--fg);
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  padding: 8px 16px;
-  background: var(--chip-bg);
-  border-radius: 6px;
-  transition: all 0.3s ease;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 5px !important;
+  font-family: var(--font-mono) !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: var(--fg) !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.3px !important;
+  padding: 7px 12px !important;
+  background: var(--chip-bg) !important;
+  border-radius: 5px !important;
+  transition: all 0.3s ease !important;
+  white-space: nowrap !important;
+  text-align: center !important;
 }
 
 .megamenu-cta:hover {

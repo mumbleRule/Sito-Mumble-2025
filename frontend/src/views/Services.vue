@@ -24,8 +24,53 @@
       </div>
     </section>
 
+    <!-- Services Overview Section -->
+    <section class="services-overview-section">
+      <div class="container">
+        <div class="overview-header">
+          <h2>Le nostre aree di competenza</h2>
+          <p>Tre pilastri fondamentali per trasformare la tua azienda attraverso la tecnologia</p>
+        </div>
+
+        <div class="overview-grid">
+          <div class="overview-card card-reveal" data-reveal="ascoltiamo">
+            <div class="overview-tag sage">Sviluppo</div>
+            <h3>Software su misura</h3>
+            <p>Creiamo applicazioni web e gestionali personalizzati che si adattano perfettamente ai tuoi processi aziendali.</p>
+            <ul class="overview-features">
+              <li>Development Python/Django</li>
+              <li>Web App & UX/UI Design</li>
+              <li>Architetture scalabili</li>
+            </ul>
+          </div>
+
+          <div class="overview-card card-reveal" data-reveal="progettiamo">
+            <div class="overview-tag warm-clay">Integrazione</div>
+            <h3>Connessioni intelligenti</h3>
+            <p>Colleghiamo i tuoi sistemi esistenti per automatizzare i processi e eliminare i lavori ripetitivi.</p>
+            <ul class="overview-features">
+              <li>Integrazioni API avanzate</li>
+              <li>Portali & Piattaforme B2B</li>
+              <li>Sincronizzazione dati</li>
+            </ul>
+          </div>
+
+          <div class="overview-card card-reveal" data-reveal="realizziamo">
+            <div class="overview-tag muted">Gestione</div>
+            <h3>Business intelligence</h3>
+            <p>Sistemi di gestione e analisi per ottimizzare le operazioni e prendere decisioni basate sui dati.</p>
+            <ul class="overview-features">
+              <li>CRM e ERP personalizzati</li>
+              <li>Dashboard e Analytics</li>
+              <li>Reporting automatico</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Sviluppo Section -->
-    <section class="sviluppo-section">
+    <section id="sviluppo" class="sviluppo-section">
       <div class="container">
         <div class="category-header">
           <h2>Sviluppo</h2>
@@ -35,7 +80,7 @@
         </div>
 
         <div class="category-services">
-          <div class="service-card">
+          <div id="development" class="service-card">
             <div class="service-header">
               <h3>Development</h3>
               <div class="service-tags">
@@ -57,7 +102,7 @@
             </div>
           </div>
 
-          <div class="service-card">
+          <div id="webapp-ux" class="service-card">
             <div class="service-header">
               <h3>Web App & UX/UI</h3>
               <div class="service-tags">
@@ -83,7 +128,7 @@
     </section>
 
     <!-- Integrazione Section -->
-    <section class="integrazione-section">
+    <section id="integrazione" class="integrazione-section">
       <div class="container">
         <div class="category-header">
           <h2>Integrazione</h2>
@@ -93,7 +138,7 @@
         </div>
 
         <div class="category-services">
-          <div class="service-card">
+          <div id="api-integration" class="service-card">
             <div class="service-header">
               <h3>Integrazioni API</h3>
               <div class="service-tags">
@@ -115,7 +160,7 @@
             </div>
           </div>
 
-          <div class="service-card">
+          <div id="portali" class="service-card">
             <div class="service-header">
               <h3>Portali & Piattaforme</h3>
               <div class="service-tags">
@@ -141,7 +186,7 @@
     </section>
 
     <!-- Gestione Section -->
-    <section class="gestione-section">
+    <section id="gestione" class="gestione-section">
       <div class="container">
         <div class="category-header">
           <h2>Gestione</h2>
@@ -151,7 +196,7 @@
         </div>
 
         <div class="category-services">
-          <div class="service-card">
+          <div id="crm-erp" class="service-card">
             <div class="service-header">
               <h3>CRM e ERP</h3>
               <div class="service-tags">
@@ -173,7 +218,7 @@
             </div>
           </div>
 
-          <div class="service-card">
+          <div id="business-intelligence" class="service-card">
             <div class="service-header">
               <h3>Business Intelligence</h3>
               <div class="service-tags">
@@ -226,10 +271,23 @@
 </script>
 
 <style scoped>
+/* Scroll offset per navbar fissa */
+#sviluppo,
+#development,
+#webapp-ux,
+#integrazione,
+#api-integration,
+#portali,
+#gestione,
+#crm-erp,
+#business-intelligence {
+  scroll-margin-top: 100px;
+}
+
 /* Hero Section */
 .services-hero {
   background: var(--bg);
-  padding: 120px 0 80px;
+  padding: 120px 0 40px;
   width: 100%;
 }
 
@@ -270,47 +328,47 @@
   margin-bottom: 0;
 }
 
-/* Timing per ogni riga con pause tra le righe */
+/* Timing per ogni riga con pause tra le righe - VELOCIZZATO */
 /* Prima riga: Ascoltiamo, */
-.title-line:nth-child(1) .letter:nth-child(1) { animation-delay: 0.1s; }
-.title-line:nth-child(1) .letter:nth-child(2) { animation-delay: 0.15s; }
-.title-line:nth-child(1) .letter:nth-child(3) { animation-delay: 0.2s; }
-.title-line:nth-child(1) .letter:nth-child(4) { animation-delay: 0.25s; }
-.title-line:nth-child(1) .letter:nth-child(5) { animation-delay: 0.3s; }
-.title-line:nth-child(1) .letter:nth-child(6) { animation-delay: 0.35s; }
-.title-line:nth-child(1) .letter:nth-child(7) { animation-delay: 0.4s; }
-.title-line:nth-child(1) .letter:nth-child(8) { animation-delay: 0.45s; }
-.title-line:nth-child(1) .letter:nth-child(9) { animation-delay: 0.5s; }
-.title-line:nth-child(1) .letter:nth-child(10) { animation-delay: 0.55s; }
-.title-line:nth-child(1) .letter:nth-child(11) { animation-delay: 0.6s; }
+.title-line:nth-child(1) .letter:nth-child(1) { animation-delay: 0.05s; }
+.title-line:nth-child(1) .letter:nth-child(2) { animation-delay: 0.1s; }
+.title-line:nth-child(1) .letter:nth-child(3) { animation-delay: 0.15s; }
+.title-line:nth-child(1) .letter:nth-child(4) { animation-delay: 0.2s; }
+.title-line:nth-child(1) .letter:nth-child(5) { animation-delay: 0.25s; }
+.title-line:nth-child(1) .letter:nth-child(6) { animation-delay: 0.3s; }
+.title-line:nth-child(1) .letter:nth-child(7) { animation-delay: 0.35s; }
+.title-line:nth-child(1) .letter:nth-child(8) { animation-delay: 0.4s; }
+.title-line:nth-child(1) .letter:nth-child(9) { animation-delay: 0.45s; }
+.title-line:nth-child(1) .letter:nth-child(10) { animation-delay: 0.5s; }
+.title-line:nth-child(1) .letter:nth-child(11) { animation-delay: 0.55s; }
 
 /* Seconda riga: Progettiamo, */
-.title-line:nth-child(2) .letter:nth-child(1) { animation-delay: 0.8s; }
-.title-line:nth-child(2) .letter:nth-child(2) { animation-delay: 0.85s; }
-.title-line:nth-child(2) .letter:nth-child(3) { animation-delay: 0.9s; }
-.title-line:nth-child(2) .letter:nth-child(4) { animation-delay: 0.95s; }
-.title-line:nth-child(2) .letter:nth-child(5) { animation-delay: 1.0s; }
-.title-line:nth-child(2) .letter:nth-child(6) { animation-delay: 1.05s; }
-.title-line:nth-child(2) .letter:nth-child(7) { animation-delay: 1.1s; }
-.title-line:nth-child(2) .letter:nth-child(8) { animation-delay: 1.15s; }
-.title-line:nth-child(2) .letter:nth-child(9) { animation-delay: 1.2s; }
-.title-line:nth-child(2) .letter:nth-child(10) { animation-delay: 1.25s; }
-.title-line:nth-child(2) .letter:nth-child(11) { animation-delay: 1.3s; }
-.title-line:nth-child(2) .letter:nth-child(12) { animation-delay: 1.35s; }
+.title-line:nth-child(2) .letter:nth-child(1) { animation-delay: 0.7s; }
+.title-line:nth-child(2) .letter:nth-child(2) { animation-delay: 0.75s; }
+.title-line:nth-child(2) .letter:nth-child(3) { animation-delay: 0.8s; }
+.title-line:nth-child(2) .letter:nth-child(4) { animation-delay: 0.85s; }
+.title-line:nth-child(2) .letter:nth-child(5) { animation-delay: 0.9s; }
+.title-line:nth-child(2) .letter:nth-child(6) { animation-delay: 0.95s; }
+.title-line:nth-child(2) .letter:nth-child(7) { animation-delay: 1.0s; }
+.title-line:nth-child(2) .letter:nth-child(8) { animation-delay: 1.05s; }
+.title-line:nth-child(2) .letter:nth-child(9) { animation-delay: 1.1s; }
+.title-line:nth-child(2) .letter:nth-child(10) { animation-delay: 1.15s; }
+.title-line:nth-child(2) .letter:nth-child(11) { animation-delay: 1.2s; }
+.title-line:nth-child(2) .letter:nth-child(12) { animation-delay: 1.25s; }
 
 /* Terza riga: Realizziamo. */
-.title-line:nth-child(3) .letter:nth-child(1) { animation-delay: 1.55s; }
-.title-line:nth-child(3) .letter:nth-child(2) { animation-delay: 1.6s; }
-.title-line:nth-child(3) .letter:nth-child(3) { animation-delay: 1.65s; }
-.title-line:nth-child(3) .letter:nth-child(4) { animation-delay: 1.7s; }
-.title-line:nth-child(3) .letter:nth-child(5) { animation-delay: 1.75s; }
-.title-line:nth-child(3) .letter:nth-child(6) { animation-delay: 1.8s; }
-.title-line:nth-child(3) .letter:nth-child(7) { animation-delay: 1.85s; }
-.title-line:nth-child(3) .letter:nth-child(8) { animation-delay: 1.9s; }
-.title-line:nth-child(3) .letter:nth-child(9) { animation-delay: 1.95s; }
-.title-line:nth-child(3) .letter:nth-child(10) { animation-delay: 2.0s; }
-.title-line:nth-child(3) .letter:nth-child(11) { animation-delay: 2.05s; }
-.title-line:nth-child(3) .letter:nth-child(12) { animation-delay: 2.1s; }
+.title-line:nth-child(3) .letter:nth-child(1) { animation-delay: 1.4s; }
+.title-line:nth-child(3) .letter:nth-child(2) { animation-delay: 1.45s; }
+.title-line:nth-child(3) .letter:nth-child(3) { animation-delay: 1.5s; }
+.title-line:nth-child(3) .letter:nth-child(4) { animation-delay: 1.55s; }
+.title-line:nth-child(3) .letter:nth-child(5) { animation-delay: 1.6s; }
+.title-line:nth-child(3) .letter:nth-child(6) { animation-delay: 1.65s; }
+.title-line:nth-child(3) .letter:nth-child(7) { animation-delay: 1.7s; }
+.title-line:nth-child(3) .letter:nth-child(8) { animation-delay: 1.75s; }
+.title-line:nth-child(3) .letter:nth-child(9) { animation-delay: 1.8s; }
+.title-line:nth-child(3) .letter:nth-child(10) { animation-delay: 1.85s; }
+.title-line:nth-child(3) .letter:nth-child(11) { animation-delay: 1.9s; }
+.title-line:nth-child(3) .letter:nth-child(12) { animation-delay: 1.95s; }
 
 @keyframes letterReveal {
   0% {
@@ -326,6 +384,143 @@
   line-height: 1.6;
   color: var(--muted);
   margin: 0;
+}
+
+/* Services Overview Section */
+.services-overview-section {
+  background: var(--bg);
+  padding: 0 0 60px;
+  width: 100%;
+}
+
+.overview-header {
+  text-align: left;
+  margin-bottom: 60px;
+  max-width: 800px;
+}
+
+.overview-header h2 {
+  font-size: clamp(32px, 4vw, 40px);
+  margin: 0 0 20px;
+  font-weight: 400;
+  color: var(--fg);
+}
+
+.overview-header p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.overview-card {
+  background: var(--chip-bg);
+  border-radius: 12px;
+  padding: 32px;
+  text-align: left;
+  transition: transform 0.3s ease;
+}
+
+.overview-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Card Reveal Animation - sincronizzata con il titolo */
+.card-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: cardReveal 0.6s ease-out forwards;
+}
+
+/* Timing sincronizzato con la lettera iniziale di ogni parola */
+.card-reveal[data-reveal="ascoltiamo"] {
+  animation-delay: 0.05s; /* Appare con la "A" di "Ascoltiamo" */
+}
+
+.card-reveal[data-reveal="progettiamo"] {
+  animation-delay: 0.7s; /* Appare con la "P" di "Progettiamo" */
+}
+
+.card-reveal[data-reveal="realizziamo"] {
+  animation-delay: 1.4s; /* Appare con la "R" di "Realizziamo" */
+}
+
+@keyframes cardReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.overview-tag {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+  display: inline-block;
+  color: white;
+}
+
+.overview-tag.sage {
+  background: var(--sage);
+}
+
+.overview-tag.warm-clay {
+  background: var(--warm-clay);
+}
+
+.overview-tag.muted {
+  background: var(--muted);
+}
+
+.overview-card h3 {
+  font-size: 24px;
+  margin: 0 0 16px;
+  font-weight: 400;
+  color: var(--fg);
+}
+
+.overview-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0 0 24px;
+}
+
+.overview-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.overview-features li {
+  font-size: 14px;
+  color: var(--fg);
+  margin-bottom: 8px;
+  padding-left: 16px;
+  position: relative;
+}
+
+.overview-features li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--sage);
+  font-weight: 600;
 }
 
 /* Sottotitolo senza animazione - appare subito */
@@ -560,13 +755,26 @@
 /* Responsive */
 @media (max-width: 768px) {
   .services-hero {
-    padding: 80px 0 60px;
+    padding: 80px 0 30px;
   }
   
+  .services-overview-section {
+    padding: 0 0 40px;
+  }
+
   .sviluppo-section,
   .integrazione-section,
   .gestione-section {
     padding: 60px 0;
+  }
+
+  .overview-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .overview-card {
+    padding: 24px;
   }
 
   .category-services {
