@@ -21,9 +21,9 @@ class Command(BaseCommand):
             },
             {
                 'title': 'Vinovero',
-                'description': 'Gestionale ERP completo per la catena di enoteche con vendita al bicchiere. Sistema integrato per gestione inventario, vendite e analytics.',
-                'client': 'Vinovero Enoteche',
-                'technologies': 'Django, Vue.js, PostgreSQL, Redis',
+                'description': 'ERP enterprise per enoteca multi-location specializzata in vini naturali. Sistema unificato per gestione acquisti, magazzino, vendite e monitoraggio AI della vendita al bicchiere.',
+                'client': 'VinoVero',
+                'technologies': 'Django, Vue.js, PostgreSQL, AI/ML',
                 'is_featured': True,
                 'completed_date': date(2024, 4, 20),
                 'category': 'ERP'
@@ -39,12 +39,12 @@ class Command(BaseCommand):
             },
             {
                 'title': 'IF65',
-                'description': 'Piattaforma avanzata di project management per progetti IT complessi. Sistema di tracking, reporting e collaborazione in tempo reale.',
-                'client': 'IF65 Consulting',
-                'technologies': 'Django, React, PostgreSQL, Docker',
+                'description': 'Piattaforma enterprise di project management per gruppi multi-business. Sistema di coordinamento, monitoraggio e ottimizzazione delle risorse tra diverse divisioni aziendali.',
+                'client': 'IF65 Group',
+                'technologies': 'Django, Vue.js, PostgreSQL, Docker',
                 'is_featured': True,
                 'completed_date': date(2024, 2, 5),
-                'category': 'Project Management'
+                'category': 'Business Management'
             },
             {
                 'title': 'CreJob',
@@ -57,9 +57,9 @@ class Command(BaseCommand):
             },
             {
                 'title': 'Roda',
-                'description': 'Configuratore web interattivo per arredamento outdoor personalizzato. Visualizzazione 3D e preventivi automatici.',
-                'client': 'Roda Furniture',
-                'technologies': 'Three.js, Django, Vue.js, WebGL',
+                'description': 'Sistema backend enterprise per configuratore web di arredamento outdoor di lusso. Architettura scalabile per personalizzazione prodotti, gestione dati complessi e performance ottimali.',
+                'client': 'Roda',
+                'technologies': 'Django, PostgreSQL, Redis, Docker',
                 'is_featured': True,
                 'completed_date': date(2023, 12, 20),
                 'category': 'Configuratore'

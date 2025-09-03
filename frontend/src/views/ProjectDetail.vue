@@ -105,7 +105,9 @@
         <div v-if="project">
           <div class="project-features" v-if="getProjectContent(project.title)?.features">
               <h2>Funzionalità principali</h2>
-              <p class="features-subtitle">Esplora le funzionalità del CRM Hotel Target attraverso le schermate dell'interfaccia</p>
+              <p class="features-subtitle" v-if="project.title === 'Hotel Target'">Esplora le funzionalità del CRM Hotel Target attraverso le schermate dell'interfaccia</p>
+              <p class="features-subtitle" v-else-if="project.title === 'IF65'">Scopri le funzionalità della piattaforma di project management attraverso le schermate del sistema</p>
+              <p class="features-subtitle" v-else>Esplora le funzionalità principali attraverso le schermate dell'interfaccia</p>
 
               <div class="features-with-images">
                 <div
@@ -262,6 +264,82 @@ const projectGalleries = {
       title: 'Catalogo Strutture',
       description: 'Database completo delle strutture partner con listini e disponibilità'
     }
+  ],
+  'IF65': [
+    {
+      src: '/src/assets/images/if65/progetti.png',
+      title: 'Command Center Progetti',
+      description: 'Dashboard executive per la gestione centralizzata di tutti i progetti del gruppo con vista strategica'
+    },
+    {
+      src: '/src/assets/images/if65/tasks.png',
+      title: 'Workflow Engine Tasks',
+      description: 'Sistema avanzato di gestione task con automazione e template personalizzabili per processi ricorrenti'
+    },
+    {
+      src: '/src/assets/images/if65/alert.png',
+      title: 'Priority Matrix Alert',
+      description: 'Sistema di prioritizzazione dinamica con algoritmi intelligenti e visualizzazione heat-map'
+    },
+    {
+      src: '/src/assets/images/if65/avanzamento.png',
+      title: 'Business Intelligence Dashboard',
+      description: 'Analytics predittive con KPI personalizzati e report automatici per ogni business unit'
+    },
+    {
+      src: '/src/assets/images/if65/tasks_ore.png',
+      title: 'Resource Optimization Center',
+      description: 'Sistema di allocazione intelligente con time tracking automatico e analisi costi-benefici'
+    },
+    {
+      src: '/src/assets/images/if65/assegnazione.png',
+      title: 'Enterprise Risk Management',
+      description: 'Piattaforma di risk management con monitoraggio proattivo e piani di contingenza automatizzati'
+    }
+  ],
+  'Roda': [
+    {
+      src: '/src/assets/images/roda/dati.png',
+      title: 'Sistema Gestione Dati',
+      description: 'Database relazionale complesso per gestire prodotti, collezioni e varianti con categorizzazione intelligente'
+    },
+    {
+      src: '/src/assets/images/roda/logica.png',
+      title: 'Engine Configurazione',
+      description: 'Logica sofisticata per selezione opzioni e generazione combinazioni con regole di compatibilità avanzate'
+    },
+    {
+      src: '/src/assets/images/roda/front.png',
+      title: 'API Gateway Performance',
+      description: 'Sistema di elaborazione richieste ottimizzato per gestire configurazioni e calcolo prezzi in tempo reale'
+    },
+    {
+      src: '/src/assets/images/roda/scalabilita.png',
+      title: 'Architettura Scalabile',
+      description: 'Infrastruttura enterprise con caching avanzato, load balancing e monitoring per performance costanti'
+    }
+  ],
+  'Vinovero': [
+    {
+      src: '/src/assets/images/vinovero/ordini.png',
+      title: 'Sistema Ordini ERP',
+      description: 'Workflow di autorizzazione ordini con permessi granulari e dashboard unificata per tutti i punti vendita'
+    },
+    {
+      src: '/src/assets/images/vinovero/magazzino.png',
+      title: 'Gestione Magazzino Digitale',
+      description: 'Mappatura completa del magazzino con indicazioni precise di scaffale, colonna e ubicazione per ogni prodotto'
+    },
+    {
+      src: '/src/assets/images/vinovero/fatturato.png',
+      title: 'Centro Controllo Finanziario',
+      description: 'Dashboard analytics con differenziazione centri di costo e separazione incassi negozi fisici ed e-commerce'
+    },
+    {
+      src: '/src/assets/images/vinovero/barcode.png',
+      title: 'AI Wine Recognition',
+      description: 'Sistema di riconoscimento automatico etichette tramite webcam per monitoraggio vendita al bicchiere'
+    }
   ]
 }
 
@@ -287,11 +365,29 @@ const getMatchingScreenshot = (featureTitle) => {
 
   // Mapping tra titoli delle funzionalità e schermate
   const featureToScreenshot = {
+    // Hotel Target
     'LeadBoard': 'LeadBoard Dashboard',
     'Gestione Richieste Centralizzata': 'Gestione Richieste',
     'Sistema di Preventivazione Avanzato': 'Sistema Preventivi',
     'Gestione Prenotazioni Completa': 'Gestione Prenotazioni',
-    'Catalogo Strutture Dinamico': 'Catalogo Strutture'
+    'Catalogo Strutture Dinamico': 'Catalogo Strutture',
+    // IF65 - Mapping 1:1 tra funzionalità e schermate
+    'Gestione Progetti Centralizzata': 'Command Center Progetti',
+    'Sistema Task Intelligente': 'Workflow Engine Tasks',
+    'Gestione Priorità Avanzata': 'Priority Matrix Alert',
+    'Monitoraggio e Analytics': 'Business Intelligence Dashboard',
+    'Gestione Risorse e Ore': 'Resource Optimization Center',
+    'Risk Management Integrato': 'Enterprise Risk Management',
+    // Roda - Mapping 1:1 tra funzionalità e schermate
+    'Sistema Gestione Dati Avanzato': 'Sistema Gestione Dati',
+    'Engine di Configurazione Intelligente': 'Engine Configurazione',
+    'API Gateway Performante': 'API Gateway Performance',
+    'Architettura Scalabile Enterprise': 'Architettura Scalabile',
+    // Vinovero - Mapping 1:1 tra funzionalità e schermate
+    'Sistema Ordini Intelligente': 'Sistema Ordini ERP',
+    'Gestione Magazzino Avanzata': 'Gestione Magazzino Digitale',
+    'Centro Controllo Finanziario': 'Centro Controllo Finanziario',
+    'AI-Powered Wine Recognition': 'AI Wine Recognition'
   }
 
   const screenshotTitle = featureToScreenshot[featureTitle]
@@ -390,6 +486,174 @@ const getProjectContent = (projectTitle) => {
       testimonial: {
         text: 'Il CRM sviluppato da Mumble ha rivoluzionato il nostro modo di lavorare. Quello che prima richiedeva ore di lavoro manuale, ora viene gestito automaticamente. La nostra produttività è aumentata drasticamente.',
         author: 'Marco, Fondatore Hotel Target'
+      }
+    },
+    'IF65': {
+      challenge: 'IF65, gruppo aziendale italiano con diverse società operative in settori complementari, si trovava ad affrontare la sfida della gestione frammentata dei progetti. Ogni divisione utilizzava strumenti diversi, creando inefficienze e perdita di visibilità sui processi trasversali.',
+      objective: 'Creare un ecosistema digitale unificato che permettesse ai project manager di orchestrare progetti complessi attraverso multiple business unit, garantendo trasparenza, controllo delle risorse e allineamento strategico a livello di gruppo.',
+      solution: 'Una piattaforma enterprise di project management progettata per gestire la complessità organizzativa di un gruppo multi-business, con dashboard centralizzate, workflow automatizzati e intelligence operativa avanzata.',
+      features: [
+        {
+          title: 'Gestione Progetti Centralizzata',
+          description: 'Dashboard unificata per monitorare tutti i progetti del gruppo in tempo reale. Visibilità completa su stato, risorse e milestone con controllo granulare per ogni divisione aziendale.'
+        },
+        {
+          title: 'Sistema Task Intelligente',
+          description: 'Creazione, assegnazione e tracciamento avanzato di task con template personalizzabili. Automazione dei flussi di lavoro ricorrenti e notifiche smart per il team.'
+        },
+        {
+          title: 'Gestione Priorità Avanzata',
+          description: 'Sistema di prioritizzazione intelligente che bilancia urgenza, impatto business e disponibilità risorse. Indicatori visivi per identificare immediatamente i progetti critici.'
+        },
+        {
+          title: 'Monitoraggio e Analytics',
+          description: 'Dashboard avanzate con KPI personalizzati e analytics predittive per ogni business unit. Report automatici che identificano trend, colli di bottiglia e opportunità di miglioramento.'
+        },
+        {
+          title: 'Gestione Risorse e Ore',
+          description: 'Sistema di allocazione ottimizzata delle risorse tra progetti e divisioni. Time tracking dettagliato con analisi costi-benefici e previsioni budget accurate.'
+        },
+        {
+          title: 'Risk Management Integrato',
+          description: 'Monitoraggio proattivo di rischi operativi, dipendenze critiche e impatti cross-business. Sistema di allerta automatico con piani di contingenza predefiniti.'
+        }
+      ],
+      results: [
+        '+65% efficienza nella gestione progetti cross-divisionale',
+        '-50% tempo di coordinamento tra business unit',
+        '+200% visibilità operativa a livello di gruppo',
+        '90% riduzione errori di allocazione risorse',
+        'ROI del 300% nel primo anno di implementazione'
+      ],
+      nextStepsItems: [
+        {
+          title: 'Integrazione Sistemi Tempo',
+          description: 'Connessione con strumenti di time tracking per automatizzare la registrazione delle ore e migliorare la precisione del controllo costi.'
+        },
+        {
+          title: 'Strumenti Comunicazione',
+          description: 'Integrazione con piattaforme di comunicazione aziendale per centralizzare discussioni e decisioni all\'interno dei progetti.'
+        },
+        {
+          title: 'Condivisione Documenti',
+          description: 'Sistema avanzato di document management con versioning, permessi granulari e sincronizzazione cloud per collaborazione seamless.'
+        },
+        {
+          title: 'Analytics Predittive',
+          description: 'Algoritmi di machine learning per prevedere ritardi, identificare colli di bottiglia e suggerire ottimizzazioni dei processi.'
+        }
+      ],
+      testimonial: {
+        text: 'Mumble ha creato per noi molto più di una piattaforma di project management: un vero sistema nervoso digitale che connette tutte le nostre divisioni. La trasformazione operativa è stata straordinaria.',
+        author: 'Chief Operations Officer, IF65 Group'
+      }
+    },
+    'Roda': {
+      challenge: 'Roda, eccellenza del made in Italy nel settore dell\'arredamento outdoor, necessitava di un configuratore web avanzato per valorizzare i propri prodotti di alta gamma, creando un\'esperienza digitale che permettesse personalizzazione e visualizzazione di combinazioni uniche.',
+      objective: 'Sviluppare un sistema backend robusto per un configuratore web che permettesse personalizzazione intuitiva di mobili e accessori, semplificazione del processo di selezione e visualizzazione chiara dei prodotti configurati.',
+      solution: 'Un backend enterprise progettato per gestire la complessità di un configuratore di arredamento di lusso, con architettura scalabile, logiche di configurazione avanzate e integrazione seamless con il frontend per performance ottimali.',
+      features: [
+        {
+          title: 'Sistema Gestione Dati Avanzato',
+          description: 'Database relazionale complesso per gestire prodotti, collezioni e varianti con tutte le opzioni di personalizzazione. Categorizzazione intelligente con relazioni ottimizzate per performance.'
+        },
+        {
+          title: 'Engine di Configurazione Intelligente',
+          description: 'Logica sofisticata per selezione opzioni e generazione combinazioni validate. Gestione automatica delle relazioni tra elementi con regole di compatibilità avanzate.'
+        },
+        {
+          title: 'API Gateway Performante',
+          description: 'Sistema di elaborazione richieste ottimizzato per gestire selezioni, modifiche e calcolo prezzi in tempo reale. Architettura RESTful per comunicazione fluida.'
+        },
+        {
+          title: 'Architettura Scalabile Enterprise',
+          description: 'Infrastruttura per traffico elevato con caching avanzato, ottimizzazione query e load balancing. Monitoring e auto-scaling per performance costanti.'
+        }
+      ],
+      results: [
+        '+300% engagement utenti sul configuratore',
+        '-60% tempo di configurazione prodotti',
+        '99.9% uptime anche con picchi di traffico',
+        '+150% conversioni da configurazione ad acquisto',
+        'Scalabilità testata fino a 10.000 utenti simultanei'
+      ],
+      nextStepsItems: [
+        {
+          title: 'Integrazione Sistema Ordini',
+          description: 'Connessione diretta con il sistema di gestione ordini per automatizzare il processo di acquisto dalle configurazioni salvate, con workflow di approvazione e tracking.'
+        },
+        {
+          title: 'Gestione Inventario Real-time',
+          description: 'Integrazione con sistema di inventario per verificare disponibilità effettiva dei prodotti selezionati e aggiornare automaticamente le opzioni disponibili.'
+        },
+        {
+          title: 'Visualizzazione 3D Avanzata',
+          description: 'Implementazione di rendering 3D fotorealistico per permettere ai clienti di visualizzare le configurazioni in ambienti virtuali realistici.'
+        },
+        {
+          title: 'AI-Powered Recommendations',
+          description: 'Sistema di intelligenza artificiale per suggerire combinazioni ottimali basate su preferenze utente, trend di mercato e compatibilità estetica.'
+        }
+      ],
+      testimonial: {
+        text: 'Il configuratore sviluppato da Mumble ha trasformato completamente la nostra esperienza di vendita online. I clienti ora possono creare le loro composizioni ideali con una facilità incredibile.',
+        author: 'Digital Manager, Roda'
+      }
+    },
+    'Vinovero': {
+      challenge: 'VinoVero, punto di riferimento per vini naturali, stava espandendo con nuovi punti vendita in Italia, Portogallo e Spagna. La crescita geografica richiedeva gestione unificata dei flussi di lavoro e controllo centralizzato delle operazioni multi-location.',
+      objective: 'Sviluppare un sistema ERP completo per unificare i processi tra tutti i punti vendita, centralizzare l\'anagrafica produttori, automatizzare le autorizzazioni ordini e implementare il monitoraggio innovativo della vendita al bicchiere.',
+      solution: 'Un ERP enterprise su misura che integra tutti i flussi operativi: dalla gestione acquisti alla contabilità, dal controllo magazzino alla cassa, fino al monitoraggio della vendita al bicchiere tramite intelligenza artificiale.',
+      features: [
+        {
+          title: 'Anagrafica Unificata Produttori',
+          description: 'Sistema centralizzato per gestire produttori e distributori di vini naturali con condivisione automatica del know-how. Alert intelligenti per evidenziare le new entry del settore.'
+        },
+        {
+          title: 'Sistema Ordini Intelligente',
+          description: 'Workflow di autorizzazione ordini con permessi granulari. Dashboard unificata con visualizzazione stato in tempo reale: programmato, autorizzato, consegnato e fatturato.'
+        },
+        {
+          title: 'Gestione Magazzino Avanzata',
+          description: 'Mappatura digitale completa con indicazioni precise di scaffale, colonna e ubicazione. Sistema ottimizzato per alta rotazione con ricerca rapida e gestione automatica giacenze.'
+        },
+        {
+          title: 'Centro Controllo Finanziario',
+          description: 'Dashboard analytics per risultati dell\'attività con differenziazione centri di costo. Separazione intelligente tra incassi negozi fisici e revenue e-commerce.'
+        },
+        {
+          title: 'AI-Powered Wine Recognition',
+          description: 'Tecnologia innovativa che combina intelligenza artificiale e web app per monitoraggio vendita al bicchiere. Riconoscimento automatico etichette tramite webcam.'
+        }
+      ],
+      results: [
+        '100% unificazione processi tra tutti i punti vendita',
+        '-70% tempo gestione ordini e autorizzazioni',
+        '+200% efficienza nella gestione magazzino',
+        'Real-time tracking vendite al bicchiere',
+        'ROI 250% nel primo anno di implementazione'
+      ],
+      nextStepsItems: [
+        {
+          title: 'E-commerce Avanzato',
+          description: 'Integrazione piattaforma e-commerce con sincronizzazione automatica inventario, gestione spedizioni e sistema di raccomandazioni personalizzate per clienti.'
+        },
+        {
+          title: 'Sistema Fidelizzazione',
+          description: 'Programma loyalty multi-location con punti, sconti personalizzati e eventi esclusivi per valorizzare i clienti più fedeli della community vini naturali.'
+        },
+        {
+          title: 'Analytics Predittive',
+          description: 'Algoritmi di machine learning per prevedere domanda, ottimizzare stock e suggerire acquisti basati su stagionalità e trend del mercato vini naturali.'
+        },
+        {
+          title: 'Marketplace B2B',
+          description: 'Piattaforma per connettere direttamente produttori e rivenditori specializzati, facilitando scoperta di nuovi vini e ottimizzazione della supply chain.'
+        }
+      ],
+      testimonial: {
+        text: 'Mumble ha creato per noi molto più di un gestionale: un vero ecosistema digitale che ha unificato tutte le nostre location. Ora gestiamo l\'espansione internazionale con la stessa facilità di un singolo negozio.',
+        author: 'Founder, VinoVero'
       }
     }
   }
@@ -1242,7 +1506,7 @@ onMounted(async () => {
 /* Sezione prossimi sviluppi */
 .project-next-steps h2 {
   font-size: 32px;
-  margin: 0 0 16px;
+  margin: 0 0 8px;
   color: var(--fg);
   font-family: var(--font-mono);
   font-weight: 600;
@@ -1256,7 +1520,7 @@ onMounted(async () => {
   font-size: 18px;
   line-height: 1.6;
   color: var(--muted);
-  margin: 0 0 60px;
+  margin: 0 0 32px;
   text-align: left;
   max-width: 60ch;
 }
@@ -1300,7 +1564,7 @@ onMounted(async () => {
 }
 
 .accordion-title {
-  font-size: 22px;
+  font-size: 18px;
   font-family: var(--font-mono);
   font-weight: 400;
   color: var(--fg);
@@ -1320,12 +1584,12 @@ onMounted(async () => {
 }
 
 .accordion-icon {
-  font-size: 24px;
+  font-size: 20px;
   font-family: var(--font-mono);
   color: var(--muted);
   transition: all 0.3s ease;
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1574,11 +1838,13 @@ onMounted(async () => {
   }
 
   .accordion-title {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .accordion-icon {
-    font-size: 20px;
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
   }
 
   .accordion-body {
@@ -1593,6 +1859,12 @@ onMounted(async () => {
   .project-next-steps h2 {
     font-size: 28px;
     gap: 8px;
+    margin: 0 0 6px;
+  }
+
+  .next-steps-intro {
+    margin: 0 0 24px;
+    font-size: 16px;
   }
 
   .dot {
