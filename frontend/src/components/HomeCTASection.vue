@@ -2,10 +2,9 @@
   <section class="home-cta-section">
     <div class="container">
       <div class="home-cta">
-        <h2>Hai un progetto in mente?</h2>
+        <h2>Il tuo prossimo progetto inizia qui</h2>
         <p>
-          Raccontaci la tua sfida e troviamo insieme la soluzione migliore
-          per la tua azienda.
+          Raccontaci la tua idea. Ti spieghiamo come trasformarla in software che risolve problemi reali.
         </p>
         <div class="cta-button">
           <router-link to="/contatti" class="btn primary large">

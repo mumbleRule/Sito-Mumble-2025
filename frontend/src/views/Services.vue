@@ -7,18 +7,14 @@
           <div class="eyebrow font-mono">I nostri servizi</div>
           <h1 class="title-letter-reveal">
             <div class="title-line">
-              <span class="letter">A</span><span class="letter">s</span><span class="letter">c</span><span class="letter">o</span><span class="letter">l</span><span class="letter">t</span><span class="letter">i</span><span class="letter">a</span><span class="letter">m</span><span class="letter">o</span><span class="letter">.</span>
+              <span class="letter">C</span><span class="letter">o</span><span class="letter">m</span><span class="letter">e</span>
             </div>
             <div class="title-line">
-              <span class="letter">P</span><span class="letter">r</span><span class="letter">o</span><span class="letter">g</span><span class="letter">e</span><span class="letter">t</span><span class="letter">t</span><span class="letter">i</span><span class="letter">a</span><span class="letter">m</span><span class="letter">o</span><span class="letter">.</span>
-            </div>
-            <div class="title-line">
-              <span class="letter">R</span><span class="letter">e</span><span class="letter">a</span><span class="letter">l</span><span class="letter">i</span><span class="letter">z</span><span class="letter">z</span><span class="letter">i</span><span class="letter">a</span><span class="letter">m</span><span class="letter">o</span><span class="letter">.</span>
+              <span class="letter">l</span><span class="letter">a</span><span class="letter">v</span><span class="letter">o</span><span class="letter">r</span><span class="letter">i</span><span class="letter">a</span><span class="letter">m</span><span class="letter">o</span>
             </div>
           </h1>
           <p class="hero-subtitle">
-            Sviluppiamo soluzioni personalizzate che si integrano perfettamente nei tuoi processi lavorativi.
-            Ogni soluzione è studiata per ottimizzare le tue operazioni e accelerare la crescita del tuo business.
+            Ascoltiamo, progettiamo, sviluppiamo.
           </p>
         </div>
       </div>
@@ -28,40 +24,40 @@
     <section class="services-overview-section">
       <div class="container">
         <div class="overview-header">
-          <h2>Le nostre aree di competenza</h2>
-          <p>Tre pilastri fondamentali per trasformare la tua azienda attraverso la tecnologia</p>
+          <h2>Come lavoriamo per te</h2>
+          <p>Tre aree di specializzazione per trasformare le tue idee in software che funziona</p>
         </div>
 
         <div class="overview-grid">
           <div class="overview-card card-reveal" data-reveal="ascoltiamo">
             <div class="overview-tag sage">Sviluppo</div>
-            <h3>Software su misura</h3>
-            <p>Creiamo applicazioni web e gestionali personalizzati che si adattano perfettamente ai tuoi processi aziendali.</p>
+            <h3>Codice scritto per te</h3>
+            <p>Zero template. Ogni riga di codice pensata per le tue esigenze specifiche. Software che si integra con il tuo modo di lavorare.</p>
             <ul class="overview-features">
-              <li>Development Python/Django</li>
-              <li>Web App & UX/UI Design</li>
-              <li>Architetture scalabili</li>
+              <li>Development su misura</li>
+              <li>UX/UI Design funzionale</li>
+              <li>Tecnologie affidabili</li>
             </ul>
           </div>
 
           <div class="overview-card card-reveal" data-reveal="progettiamo">
             <div class="overview-tag warm-clay">Integrazione</div>
-            <h3>Connessioni intelligenti</h3>
-            <p>Colleghiamo i tuoi sistemi esistenti per automatizzare i processi e eliminare i lavori ripetitivi.</p>
+            <h3>Sistemi che parlano</h3>
+            <p>Facciamo comunicare i tuoi software tra loro. Automazione dei processi per eliminare il lavoro manuale e gli errori.</p>
             <ul class="overview-features">
-              <li>Integrazioni API avanzate</li>
-              <li>Portali & Piattaforme B2B</li>
-              <li>Sincronizzazione dati</li>
+              <li>API e Integrazioni</li>
+              <li>Piattaforme B2B</li>
+              <li>Automazione processi</li>
             </ul>
           </div>
 
           <div class="overview-card card-reveal" data-reveal="realizziamo">
             <div class="overview-tag muted">Gestione</div>
-            <h3>Business intelligence</h3>
-            <p>Sistemi di gestione e analisi per ottimizzare le operazioni e prendere decisioni basate sui dati.</p>
+            <h3>Controllo totale</h3>
+            <p>Un'unica piattaforma per gestire clienti, vendite e processi. Dati chiari per decisioni strategiche che fanno crescere il business.</p>
             <ul class="overview-features">
-              <li>CRM e ERP personalizzati</li>
-              <li>Dashboard e Analytics</li>
+              <li>CRM e Gestionali</li>
+              <li>Analytics e BI</li>
               <li>Reporting automatico</li>
             </ul>
           </div>
@@ -247,10 +243,9 @@
     <section class="services-cta-section">
       <div class="container">
         <div class="services-cta">
-          <h2>Non trovi il servizio che cerchi?</h2>
+          <h2>Hai un'idea? Realizziamola insieme.</h2>
           <p>
-            Ogni progetto è unico. Raccontaci le tue esigenze e troviamo insieme 
-            la soluzione più adatta al tuo business.
+            Ogni progetto è unico. Raccontaci la tua sfida e ti spieghiamo come trasformarla in software che funziona.
           </p>
           <div class="cta-buttons">
             <router-link to="/contatti" class="btn primary">
@@ -380,10 +375,12 @@
 }
 
 .hero-subtitle {
-  font-size: 20px;
-  line-height: 1.6;
-  color: var(--muted);
+  font-size: 24px;
+  line-height: 1.4;
+  color: var(--fg);
   margin: 0;
+  font-weight: 600;
+  font-family: var(--font-mono);
 }
 
 /* Services Overview Section */
@@ -756,6 +753,10 @@
 @media (max-width: 768px) {
   .services-hero {
     padding: 80px 0 30px;
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
   }
   
   .services-overview-section {

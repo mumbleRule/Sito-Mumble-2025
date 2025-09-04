@@ -140,7 +140,7 @@ h1 {
 .lead {
   font-size: 18px;
   color: var(--muted);
-  margin: 0 0 32px;
+  margin: 0 0 48px;
   max-width: 60ch;
 }
 

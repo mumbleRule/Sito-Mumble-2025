@@ -12,9 +12,9 @@ class Command(BaseCommand):
             
             if settings:
                 # Aggiorna i contenuti esistenti
-                settings.hero_title = "Soluzioni software su misura.\nProcessi automatizzati.\nBusiness accelerato."
-                settings.hero_subtitle = "Sviluppiamo piattaforme web che semplificano il lavoro e fanno crescere le aziende."
-                settings.hero_description = "Dalla progettazione allo sviluppo, creiamo soluzioni digitali che trasformano le sfide quotidiane in opportunità di crescita per il tuo business."
+                settings.hero_title = "Le tue idee.\nLe nostre soluzioni."
+                settings.hero_subtitle = "Ascoltiamo, progettiamo, sviluppiamo."
+                settings.hero_description = ""
                 settings.save()
                 
                 self.stdout.write(
@@ -24,9 +24,9 @@ class Command(BaseCommand):
                 # Crea nuove impostazioni se non esistono
                 SiteSettings.objects.create(
                     site_title="Mumble",
-                    hero_title="Soluzioni software su misura.\nProcessi automatizzati.\nBusiness accelerato.",
-                    hero_subtitle="Sviluppiamo piattaforme web che semplificano il lavoro e fanno crescere le aziende.",
-                    hero_description="Dalla progettazione allo sviluppo, creiamo soluzioni digitali che trasformano le sfide quotidiane in opportunità di crescita per il tuo business.",
+                    hero_title="Le tue idee.\nLe nostre soluzioni.",
+                    hero_subtitle="Ascoltiamo, progettiamo, sviluppiamo.",
+                    hero_description="",
                     contact_email="info@mumble.group"
                 )
                 

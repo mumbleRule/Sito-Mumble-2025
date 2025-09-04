@@ -321,6 +321,11 @@ const projectGalleries = {
   ],
   'Vinovero': [
     {
+      src: '/src/assets/images/vinovero/produttori.png',
+      title: 'Anagrafica Produttori Unificata',
+      description: 'Sistema centralizzato per gestire produttori e distributori di vini naturali con condivisione automatica del know-how'
+    },
+    {
       src: '/src/assets/images/vinovero/ordini.png',
       title: 'Sistema Ordini ERP',
       description: 'Workflow di autorizzazione ordini con permessi granulari e dashboard unificata per tutti i punti vendita'
@@ -339,6 +344,50 @@ const projectGalleries = {
       src: '/src/assets/images/vinovero/barcode.png',
       title: 'AI Wine Recognition',
       description: 'Sistema di riconoscimento automatico etichette tramite webcam per monitoraggio vendita al bicchiere'
+    }
+  ],
+  'CreJob': [
+    {
+      src: '/src/assets/images/crejob/ricerca.png',
+      title: 'Motore Ricerca Avanzato',
+      description: 'Sistema di ricerca intelligente per esplorare soggiorni, tirocini e corsi all\'estero con filtri avanzati'
+    },
+    {
+      src: '/src/assets/images/crejob/risultati.png',
+      title: 'Sistema Carrello Prenotazioni',
+      description: 'Esperienza di prenotazione fluida con carrello multi-selezione e validazione in tempo reale'
+    },
+    {
+      src: '/src/assets/images/crejob/accommodation.png',
+      title: 'Engine Regole Business',
+      description: 'Backend sofisticato con logiche personalizzate per gestione automatica intervalli e compatibilità'
+    },
+    {
+      src: '/src/assets/images/crejob/adminpanel.png',
+      title: 'Dashboard Gestione Utenti',
+      description: 'Pannello di controllo personalizzato per visualizzazione e gestione completa delle prenotazioni'
+    }
+  ],
+  'Pinbowl': [
+    {
+      src: '/src/assets/images/pinbowl/calendario.png',
+      title: 'Sistema Gestione Lezioni',
+      description: 'Pianificazione intelligente di lezioni con gestione orari, istruttori e aree specifiche dello skatepark'
+    },
+    {
+      src: '/src/assets/images/pinbowl/skaters.png',
+      title: 'Database Clienti CRM',
+      description: 'Sistema CRM completo per gestire dati clienti, feedback e relazioni con assistenza dedicata'
+    },
+    {
+      src: '/src/assets/images/pinbowl/viola.png',
+      title: 'Engine Marketing Comunicazione',
+      description: 'Piattaforma integrata per campagne email marketing, social media e strategie multi-canale'
+    },
+    {
+      src: '/src/assets/images/pinbowl/login.png',
+      title: 'Sistema Fatturazione Automatizzato',
+      description: 'Automazione completa fatturazione con gestione pagamenti online e controllo flusso di cassa'
     }
   ]
 }
@@ -384,10 +433,21 @@ const getMatchingScreenshot = (featureTitle) => {
     'API Gateway Performante': 'API Gateway Performance',
     'Architettura Scalabile Enterprise': 'Architettura Scalabile',
     // Vinovero - Mapping 1:1 tra funzionalità e schermate
+    'Anagrafica Unificata Produttori': 'Anagrafica Produttori Unificata',
     'Sistema Ordini Intelligente': 'Sistema Ordini ERP',
     'Gestione Magazzino Avanzata': 'Gestione Magazzino Digitale',
     'Centro Controllo Finanziario': 'Centro Controllo Finanziario',
-    'AI-Powered Wine Recognition': 'AI Wine Recognition'
+    'AI-Powered Wine Recognition': 'AI Wine Recognition',
+    // CreJob - Mapping 1:1 tra funzionalità e schermate
+    'Motore di Ricerca Avanzato': 'Motore Ricerca Avanzato',
+    'Sistema Carrello Intelligente': 'Sistema Carrello Prenotazioni',
+    'Engine Regole Business': 'Engine Regole Business',
+    'Dashboard Gestione Prenotazioni': 'Dashboard Gestione Utenti',
+    // Pinbowl - Mapping 1:1 tra funzionalità e schermate
+    'Sistema Gestione Lezioni Avanzato': 'Sistema Gestione Lezioni',
+    'Database Clienti Centralizzato': 'Database Clienti CRM',
+    'Engine Marketing e Comunicazione': 'Engine Marketing Comunicazione',
+    'Sistema Fatturazione Automatizzato': 'Sistema Fatturazione Automatizzato'
   }
 
   const screenshotTitle = featureToScreenshot[featureTitle]
@@ -654,6 +714,110 @@ const getProjectContent = (projectTitle) => {
       testimonial: {
         text: 'Mumble ha creato per noi molto più di un gestionale: un vero ecosistema digitale che ha unificato tutte le nostre location. Ora gestiamo l\'espansione internazionale con la stessa facilità di un singolo negozio.',
         author: 'Founder, VinoVero'
+      }
+    },
+    'CreJob': {
+      challenge: 'CreJob, azienda di consulenza specializzata in esperienze formative all\'estero per giovani studenti, gestiva un network consolidato di opportunità in tutta Europa ma necessitava di una piattaforma digitale per automatizzare il processo di prenotazione.',
+      objective: 'Sviluppare una piattaforma online completa per semplificare prenotazioni e gestione soggiorni, migliorare l\'esperienza utente, automatizzare i flussi operativi e centralizzare la gestione di opportunità formative europee.',
+      solution: 'Una piattaforma web moderna che integra ricerca avanzata, sistema di prenotazione intelligente, gestione automatizzata delle regole business e pannello di controllo completo, ottimizzando l\'intero customer journey delle esperienze internazionali.',
+      features: [
+        {
+          title: 'Motore di Ricerca Avanzato',
+          description: 'Sistema di ricerca intelligente per esplorare soggiorni, tirocini e corsi all\'estero. Filtri avanzati per tipologia, settore, località e durata con dettagli completi e immagini.'
+        },
+        {
+          title: 'Sistema Carrello Intelligente',
+          description: 'Esperienza di prenotazione fluida con carrello multi-selezione. Gestione automatica disponibilità e validazione in tempo reale delle combinazioni selezionate.'
+        },
+        {
+          title: 'Engine Regole Business',
+          description: 'Backend sofisticato con logiche personalizzate per esigenze operative. Gestione automatica intervalli prenotazioni e validazione compatibilità alloggi.'
+        },
+        {
+          title: 'Dashboard Gestione Prenotazioni',
+          description: 'Pannello di controllo personalizzato per utenti registrati con visualizzazione completa prenotazioni. Funzionalità di modifica, cancellazione e tracking stato.'
+        }
+      ],
+      results: [
+        '+400% efficienza nel processo di prenotazione',
+        '-80% tempo gestione amministrativa',
+        '95% soddisfazione utenti sulla piattaforma',
+        '+250% crescita prenotazioni online',
+        'Automazione completa delle regole business'
+      ],
+      nextStepsItems: [
+        {
+          title: 'Modulo Marketing Avanzato',
+          description: 'Sistema di acquisizione utenti con campagne mirate, referral program e strumenti di engagement per attrarre nuovi studenti e aumentare le conversioni.'
+        },
+        {
+          title: 'Sistema Recensioni e Rating',
+          description: 'Piattaforma di feedback per valutare esperienze, alloggi e tirocini con sistema di rating che aiuti futuri utenti nelle decisioni di prenotazione.'
+        },
+        {
+          title: 'Pagamenti Internazionali',
+          description: 'Integrazione gateway di pagamento multi-valuta con supporto per metodi di pagamento locali europei e gestione automatica dei cambi.'
+        },
+        {
+          title: 'Analytics e Ottimizzazione',
+          description: 'Dashboard business intelligence per analizzare performance, trend di prenotazione e comportamenti utenti per ottimizzazione continua della piattaforma.'
+        }
+      ],
+      testimonial: {
+        text: 'La piattaforma sviluppata da Mumble ha rivoluzionato il nostro modo di operare. Quello che prima richiedeva giorni di lavoro manuale, ora viene gestito automaticamente con un\'esperienza utente eccezionale.',
+        author: 'Team Lead, CreJob'
+      }
+    },
+    'Pinbowl': {
+      challenge: 'Pinbowl, il più grande skatepark indoor d\'Europa gestito da Fabio e Viola, necessitava di un sistema completo per ottimizzare la gestione di corsi, insegnanti, campus estivi e tutta la complessa amministrazione di una struttura sportiva di questa portata.',
+      objective: 'Sviluppare un gestionale modulare per monitorare le prestazioni del parco, ottimizzare la gestione di corsi e istruttori, automatizzare i processi amministrativi e migliorare l\'esperienza cliente con analisi del flusso di cassa.',
+      solution: 'Un sistema gestionale modulare costruito nel tempo, dove ogni modulo si integra perfettamente: gestione lezioni, clienti, marketing, amministrazione, reporting, risorse umane e servizio clienti per una gestione completa dello skatepark.',
+      features: [
+        {
+          title: 'Sistema Gestione Lezioni Avanzato',
+          description: 'Pianificazione intelligente di lezioni con gestione orari, istruttori e aree specifiche. Prevenzione automatica sovrapposizioni e tracking completo partecipanti con storico.'
+        },
+        {
+          title: 'Database Clienti Centralizzato',
+          description: 'Sistema CRM completo per gestire dati clienti con funzionalità feedback integrata. Gestione relazioni ottimizzata con assistenza dedicata e supporto tecnico.'
+        },
+        {
+          title: 'Engine Marketing e Comunicazione',
+          description: 'Piattaforma integrata per promuovere lezioni attraverso campagne email marketing automatizzate, gestione social media e strategie multi-canale.'
+        },
+        {
+          title: 'Sistema Fatturazione Automatizzato',
+          description: 'Automazione completa fatturazione con gestione pagamenti online integrata. Miglioramento gestione finanziaria e controllo ottimale del flusso di cassa.'
+        }
+      ],
+      results: [
+        '+300% efficienza nella gestione lezioni e istruttori',
+        '-70% tempo processi amministrativi',
+        '+150% engagement clienti tramite marketing automation',
+        '99% accuratezza nella fatturazione automatizzata',
+        'Real-time monitoring delle performance del parco'
+      ],
+      nextStepsItems: [
+        {
+          title: 'Analytics Avanzate Performance',
+          description: 'Sistema di reporting dettagliato per analizzare performance del parco, trend di utilizzo e insights operativi per decisioni strategiche data-driven.'
+        },
+        {
+          title: 'App Mobile Clienti',
+          description: 'Applicazione mobile per prenotazione lezioni, tracking progressi personali, community features e notifiche push per eventi e promozioni.'
+        },
+        {
+          title: 'Sistema Loyalty Program',
+          description: 'Programma fedeltà integrato con punti, rewards e sconti personalizzati per incentivare la frequentazione e premiare i clienti più assidui.'
+        },
+        {
+          title: 'IoT e Sensori Smart',
+          description: 'Integrazione sensori IoT per monitoraggio automatico utilizzo aree, sicurezza e manutenzione predittiva delle attrezzature dello skatepark.'
+        }
+      ],
+      testimonial: {
+        text: 'Il gestionale sviluppato da Mumble ha trasformato completamente la nostra operatività. Ora possiamo concentrarci su quello che amiamo di più: far crescere la community dello skateboard.',
+        author: 'Fabio & Viola, Founders Pinbowl'
       }
     }
   }

@@ -4,23 +4,24 @@
       <!-- Perché Mumble -->
       <div class="why-mumble-section">
         <div class="eyebrow font-mono">Perché Mumble</div>
-        <h2>Tre principi che guidano ogni nostro progetto</h2>
+        <h2>Perché scegliere noi</h2>
+        <p class="section-intro">Tre motivi per cui i nostri clienti ci scelgono</p>
 
         <div class="principles-content">
           <div class="principle-main">
-            <h3>Codice su misura</h3>
-            <p>Ogni soluzione è <strong>sviluppata da zero</strong> per le tue specifiche esigenze. Niente template o soluzioni preconfezionate: solo <strong>codice personalizzato</strong> che si integra perfettamente con i tuoi <strong>processi aziendali</strong>.</p>
+            <h3>Software su misura</h3>
+            <p><strong>Zero template. Solo codice tuo.</strong> Ogni riga di codice è scritta per le tue esigenze specifiche. Nessun compromesso.</p>
           </div>
 
           <div class="principles-highlights">
             <div class="highlight-item">
-              <h3>Focus B2B</h3>
-              <p>Specializzati in <strong>gestionali aziendali</strong> e <strong>automazione dei processi</strong> per aumentare l'efficienza operativa.</p>
+              <h3>Esperti del B2B</h3>
+              <p><strong>Capiamo il business.</strong> Sviluppiamo gestionali che migliorano davvero i processi aziendali. Software che fa crescere le aziende.</p>
             </div>
 
             <div class="highlight-item">
-              <h3>Stack moderno</h3>
-              <p><strong>Python, Django, Vue.js</strong> e <strong>PostgreSQL</strong> per applicazioni <strong>performanti e scalabili</strong>.</p>
+              <h3>Stack affidabile</h3>
+              <p><strong>Django + Vue.js + PostgreSQL.</strong> Tecnologie mature e performanti per applicazioni che durano nel tempo.</p>
             </div>
           </div>
         </div>
@@ -61,11 +62,19 @@
 
 .why-mumble-section h2 {
   font-size: clamp(32px, 4vw, 40px);
-  margin: 0 0 50px;
+  margin: 0 0 16px;
   font-weight: 400;
   line-height: 1.2;
   color: var(--fg);
   text-align: left;
+}
+
+.section-intro {
+  font-size: 18px;
+  color: var(--muted);
+  margin: 0 0 50px;
+  text-align: left;
+  font-weight: 400;
 }
 
 .principles-content {

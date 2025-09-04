@@ -30,9 +30,9 @@ class Command(BaseCommand):
             },
             {
                 'title': 'Pinbowl',
-                'description': 'Software di gestione completo per il più grande skatepark indoor d\'Europa. Gestione prenotazioni, eventi e membership.',
-                'client': 'Pinbowl Skatepark',
-                'technologies': 'Django, Vue.js, Stripe API, WebSocket',
+                'description': 'Gestionale modulare completo per il più grande skatepark indoor d\'Europa. Sistema integrato per gestione lezioni, clienti, marketing, fatturazione e amministrazione.',
+                'client': 'Pinbowl',
+                'technologies': 'Django, Vue.js, PostgreSQL, Stripe',
                 'is_featured': True,
                 'completed_date': date(2024, 3, 10),
                 'category': 'Gestionale'
@@ -48,9 +48,9 @@ class Command(BaseCommand):
             },
             {
                 'title': 'CreJob',
-                'description': 'Piattaforma digitale per soggiorni e tirocini all\'estero per studenti. Matching automatico e gestione completa del processo.',
-                'client': 'CreJob Platform',
-                'technologies': 'Django, Vue.js, Elasticsearch, AWS',
+                'description': 'Piattaforma digitale per esperienze formative internazionali. Sistema completo di ricerca, prenotazione e gestione soggiorni, tirocini e corsi all\'estero per studenti europei.',
+                'client': 'CreJob',
+                'technologies': 'Django, Vue.js, PostgreSQL, Elasticsearch',
                 'is_featured': True,
                 'completed_date': date(2024, 1, 15),
                 'category': 'Piattaforma'

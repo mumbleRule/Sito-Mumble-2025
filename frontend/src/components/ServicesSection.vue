@@ -1,9 +1,9 @@
 <template>
   <section id="services" class="services">
     <div class="services-container">
-      <h2>I nostri servizi</h2>
+      <h2>Quello che sviluppiamo per te</h2>
       <p class="section-subtitle">
-        Soluzioni digitali complete per automatizzare e ottimizzare i processi della tua azienda
+        Gestionali, web app e integrazioni: il software che fa crescere il tuo business
       </p>
       <div class="services-grid">
         <template v-for="(category, categoryIndex) in serviceCategories" :key="categoryIndex">
@@ -29,9 +29,9 @@
       </div>
 
       <div class="services-cta">
-        <h3 class="cta-title">Pronto a trasformare i tuoi processi?</h3>
+        <h3 class="cta-title">Hai un'idea? Realizziamola insieme.</h3>
         <p class="cta-description">
-          Parliamo del tuo progetto e scopriamo insieme come possiamo aiutarti a crescere.
+          Raccontaci il tuo progetto. Ti spieghiamo come trasformarlo in software che funziona.
         </p>
         <div class="cta-buttons">
           <router-link class="btn primary" to="/contatti">
@@ -59,14 +59,14 @@ const serviceCategories = ref([
     title: 'SVILUPPO',
     services: [
       {
-        title: 'Development',
-        description: 'Gestionali personalizzabili al 100% con codice scritto da zero. Prediligiamo <strong>Python</strong>, <strong>Django</strong>, <strong>Vue.js</strong> e <strong>PostgreSQL</strong>, ma adattiamo la tecnologia alle tue esigenze.',
+        title: 'Development su misura',
+        description: 'Gestionali 100% personalizzati con tecnologie moderne e affidabili. <strong>Python, Django, Vue.js</strong>: il nostro stack preferito per applicazioni robuste e scalabili.',
         subtitle: 'PYTHON • DJANGO • VUE.JS'
       },
       {
-        title: 'Web App & UX/UI',
-        description: 'Interfacce intuitive e responsive che migliorano l\'esperienza utente. Design moderno e funzionale per web app che i tuoi utenti ameranno utilizzare.',
-        subtitle: 'DESIGN • UX/UI • RESPONSIVE'
+        title: 'UX/UI Design',
+        description: 'Interfacce che i tuoi utenti capiscono al primo sguardo. Design funzionale e moderno per web app che migliorano davvero la produttività.',
+        subtitle: 'DESIGN • INTERFACCE • RESPONSIVE'
       }
     ]
   },
@@ -74,14 +74,14 @@ const serviceCategories = ref([
     title: 'INTEGRAZIONE',
     services: [
       {
-        title: 'Integrazioni API',
-        description: 'Colleghiamo i tuoi sistemi esistenti attraverso API robuste e sicure. Sincronizzazione dati, automazione processi e comunicazione tra piattaforme diverse.',
-        subtitle: 'REST API • WEBHOOKS • SYNC'
+        title: 'API e Integrazioni',
+        description: 'Facciamo parlare i tuoi sistemi tra loro. <strong>API sicure</strong>, sincronizzazione dati e automazione dei processi per eliminare il lavoro manuale.',
+        subtitle: 'REST API • WEBHOOKS • AUTOMAZIONE'
       },
       {
-        title: 'Portali & Piattaforme',
-        description: 'Piattaforme web complete per gestire clienti, fornitori e processi aziendali. Soluzioni scalabili che crescono con la tua azienda.',
-        subtitle: 'PORTALI • B2B • SCALABILITÀ'
+        title: 'Piattaforme B2B',
+        description: 'Piattaforme complete per gestire clienti e fornitori. Soluzioni che crescono con la tua azienda senza rallentamenti.',
+        subtitle: 'PORTALI • SCALABILITÀ • PERFORMANCE'
       }
     ]
   },
@@ -89,14 +89,14 @@ const serviceCategories = ref([
     title: 'GESTIONE',
     services: [
       {
-        title: 'CRM e ERP',
-        description: 'Sistemi di gestione clienti e risorse aziendali su misura. Centralizza vendite, contatti, inventario e processi in un\'unica piattaforma efficiente.',
-        subtitle: 'CRM • ERP • GESTIONALE'
+        title: 'CRM e Gestionali',
+        description: 'Sistemi di gestione che centralizzano tutto: clienti, vendite, magazzino. Un\'unica piattaforma per controllare il tuo business.',
+        subtitle: 'CRM • ERP • BUSINESS LOGIC'
       },
       {
-        title: 'Business Intelligence',
-        description: 'Dashboard interattive e reportistica avanzata per trasformare i tuoi dati in decisioni strategiche. Analisi predittive e KPI personalizzati per monitorare le performance aziendali.',
-        subtitle: 'DASHBOARD • ANALYTICS • REPORTING'
+        title: 'Analytics e BI',
+        description: 'Trasforma i dati in decisioni strategiche. Dashboard chiare e reportistica che ti dice cosa funziona e cosa migliorare.',
+        subtitle: 'DASHBOARD • KPI • DECISIONI'
       }
     ]
   }

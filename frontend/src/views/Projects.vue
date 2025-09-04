@@ -4,10 +4,9 @@
       <div class="container">
         <div class="projects-hero">
           <div class="eyebrow font-mono">Portfolio</div>
-          <h1>I nostri progetti</h1>
+          <h1>Software che ha fatto la differenza</h1>
           <p class="lead">
-            Scopri alcuni dei progetti che abbiamo realizzato per i nostri clienti.
-            Ogni soluzione è stata progettata su misura per rispondere a esigenze specifiche.
+            Alcuni progetti che hanno trasformato il business dei nostri clienti
           </p>
         </div>
 
