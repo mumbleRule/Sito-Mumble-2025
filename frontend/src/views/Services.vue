@@ -7,7 +7,8 @@
           <div class="eyebrow font-mono">I nostri servizi</div>
           <h1>Risolviamo i problemi che rallentano il tuo business.</h1>
           <p class="hero-subtitle">
-            Development, integrazioni, gestionali.
+            Development, integrazioni e gestionali<br>
+            per aziende che vogliono crescere.
           </p>
         </div>
       </div>
@@ -17,12 +18,13 @@
     <section class="services-overview-section">
       <div class="container">
         <div class="overview-header">
-          <h2>Tre aree dove facciamo la differenza</h2>
+          <div class="eyebrow font-mono">Competenze</div>
+          <h2>Dove facciamo la differenza</h2>
         </div>
 
         <div class="overview-grid">
           <div class="overview-card">
-            <h3>Software scritto su misura per te</h3>
+            <h3>Software scritto per te</h3>
             <div class="overview-tag sage">Sviluppo</div>
             <p>Zero template. Ogni progetto nasce per i tuoi processi. Python, Django, Vue.js: tecnologie affidabili per software che dura nel tempo.</p>
             <div class="what-we-do">
@@ -325,7 +327,7 @@
 /* Hero Section */
 .services-hero {
   background: var(--bg);
-  padding: clamp(100px, 12vw, 140px) 0 clamp(40px, 6vw, 60px);
+  padding: clamp(80px, 10vw, 100px) 0 clamp(40px, 6vw, 60px);
   width: 100%;
   position: relative;
 }
@@ -357,17 +359,17 @@
 
 .hero-content .eyebrow {
   color: var(--muted);
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
   font-family: var(--font-mono);
 }
 
 .hero-content h1 {
-  font-size: clamp(42px, 6vw, 64px);
-  margin: 0 0 32px;
+  font-size: clamp(36px, 5vw, 52px);
+  margin: 0 0 24px;
   font-weight: 400;
   line-height: 1.1;
   color: var(--fg);
@@ -375,12 +377,14 @@
 }
 
 .hero-subtitle {
-  font-size: clamp(20px, 2.5vw, 26px);
+  font-size: clamp(18px, 2vw, 22px);
   line-height: 1.5;
   color: var(--muted);
   margin: 0;
   font-weight: 300;
 }
+
+
 
 /* Services Overview Section */
 .services-overview-section {
@@ -401,23 +405,31 @@
   max-width: 800px;
 }
 
+.overview-header .eyebrow {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
 .overview-header h2 {
-  font-size: clamp(32px, 4vw, 40px);
-  margin: 0;
-  font-weight: 400;
+  font-size: 32px;
+  margin: 0 0 12px;
+  font-weight: 500;
+  font-family: var(--font-mono);
   color: var(--fg);
 }
 
 .overview-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(24px, 4vw, 48px);
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: clamp(24px, 4vw, 32px);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .overview-card {
   background: var(--chip-bg);
   border-radius: 20px;
-  padding: 40px;
+  padding: 32px;
   text-align: left;
   transition: all 0.4s ease;
   border: 1px solid var(--line);
@@ -426,6 +438,9 @@
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.6s ease forwards;
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
 }
 
 .overview-card:hover {
@@ -452,12 +467,13 @@
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 500;
-  padding: 6px 12px;
+  padding: 4px 8px;
   border-radius: 6px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 24px;
   display: inline-block;
+  width: fit-content;
   color: white;
   position: relative;
   animation: tagPulse 2s infinite;
@@ -479,18 +495,20 @@
 }
 
 .overview-card h3 {
-  font-size: 32px;
-  margin: 0 0 28px;
+  font-size: 28px;
+  margin: 0 0 20px;
   font-weight: 500;
   color: var(--fg);
   line-height: 1.2;
+  font-family: var(--font-mono);
 }
 
 .overview-card p {
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.6;
   color: var(--muted);
-  margin: 0 0 32px;
+  margin: 0 0 24px;
+  flex: 1;
 }
 
 .overview-features {
@@ -1039,6 +1057,26 @@
     padding: 20px;
   }
   
+  .overview-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .overview-card {
+    padding: 24px;
+    min-height: auto;
+  }
+
+  .overview-card h3 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .overview-card p {
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
+
   .how-we-work-section {
     padding: 60px 0;
   }
@@ -1084,4 +1122,6 @@
     align-items: flex-start;
   }
 }
+
+
 </style>
