@@ -14,22 +14,22 @@
               <div class="megamenu-section">
                 <div class="section-tag sage">Sviluppo</div>
                 <ul>
-                  <li><a href="/servizi#sviluppo">Development</a></li>
-                  <li><a href="/servizi#sviluppo">Web App & UX/UI</a></li>
+                  <li><a href="/servizi#sviluppo" @click="hideMegamenu">Development</a></li>
+                  <li><a href="/servizi#sviluppo" @click="hideMegamenu">Web App & UX/UI</a></li>
                 </ul>
               </div>
               <div class="megamenu-section">
                 <div class="section-tag warm-clay">Integrazione</div>
                 <ul>
-                  <li><a href="/servizi#integrazione">Integrazioni API</a></li>
-                  <li><a href="/servizi#integrazione">Portali & Piattaforme</a></li>
+                  <li><a href="/servizi#integrazione" @click="hideMegamenu">Integrazioni API</a></li>
+                  <li><a href="/servizi#integrazione" @click="hideMegamenu">Portali & Piattaforme</a></li>
                 </ul>
               </div>
               <div class="megamenu-section">
                 <div class="section-tag muted">Gestione</div>
                 <ul>
-                  <li><a href="/servizi#gestione">CRM e ERP</a></li>
-                  <li><a href="/servizi#gestione">Business Intelligence</a></li>
+                  <li><a href="/servizi#gestione" @click="hideMegamenu">CRM e ERP</a></li>
+                  <li><a href="/servizi#gestione" @click="hideMegamenu">Business Intelligence</a></li>
                 </ul>
               </div>
             </div>
@@ -43,21 +43,21 @@
               <div class="megamenu-section">
                 <div class="section-tag sage">Progetti</div>
                 <ul>
-                  <li><a href="/progetti#business-management">Business Management</a></li>
-                  <li><a href="/progetti#ecommerce-marketplace">E-commerce & Marketplace</a></li>
-                  <li><a href="/progetti#entertainment-leisure">Entertainment & Leisure</a></li>
+                  <li><a href="/progetti#business-management" @click="hideMegamenu">Business Management</a></li>
+                  <li><a href="/progetti#ecommerce-marketplace" @click="hideMegamenu">E-commerce & Marketplace</a></li>
+                  <li><a href="/progetti#entertainment-leisure" @click="hideMegamenu">Entertainment & Leisure</a></li>
                 </ul>
               </div>
               <div class="megamenu-section">
                 <div class="section-tag warm-clay">Metodologia</div>
                 <ul>
-                  <li><a href="/progetti#metodologia">Il nostro processo</a></li>
+                  <li><a href="/progetti#metodologia" @click="hideMegamenu">Il nostro processo</a></li>
                 </ul>
               </div>
               <div class="megamenu-section">
                 <div class="section-tag muted">Tecnologie</div>
                 <ul>
-                  <li><a href="/progetti#tecnologie">Stack tecnologico</a></li>
+                  <li><a href="/progetti#tecnologie" @click="hideMegamenu">Stack tecnologico</a></li>
                 </ul>
               </div>
             </div>
@@ -71,17 +71,17 @@
               <div class="megamenu-section">
                 <div class="section-tag sage">Parliamo del tuo progetto</div>
                 <p>Raccontaci la tua idea e troviamo insieme la soluzione migliore.</p>
-                <a href="/contatti" class="megamenu-cta">Inizia ora →</a>
+                <a href="/contatti" class="megamenu-cta" @click="hideMegamenu">Inizia ora →</a>
               </div>
               <div class="megamenu-section">
                 <div class="section-tag warm-clay">Contatti Diretti</div>
                 <ul>
-                  <li><a href="mailto:info@mumble.group" class="email-link">info@mumble.group</a></li>
+                  <li><a href="mailto:info@mumble.group" class="email-link" @click="hideMegamenu">info@mumble.group</a></li>
                 </ul>
                 <div class="section-tag muted" style="margin-top: 24px;">Seguici</div>
                 <ul>
-                  <li><a href="#" target="_blank">LinkedIn</a></li>
-                  <li><a href="#" target="_blank">GitHub</a></li>
+                  <li><a href="#" target="_blank" @click="hideMegamenu">LinkedIn</a></li>
+                  <li><a href="#" target="_blank" @click="hideMegamenu">GitHub</a></li>
                 </ul>
               </div>
             </div>
@@ -274,7 +274,8 @@ onUnmounted(() => {
   transform: translateX(-50%) translateY(-10px);
   transition: all 0.3s ease;
   z-index: 1000;
-  min-width: 600px;
+  width: clamp(400px, 50vw, 600px);
+  max-width: calc(100vw - 40px);
   margin-top: 8px;
 }
 
@@ -284,11 +285,22 @@ onUnmounted(() => {
   transform: translateX(-50%) translateY(0);
 }
 
+/* Controllo per evitare che esca dai bordi */
+.nav-item:last-child .megamenu {
+  left: auto;
+  right: 0;
+  transform: translateX(0) translateY(-10px);
+}
+
+.nav-item:last-child .megamenu.active {
+  transform: translateX(0) translateY(0);
+}
+
 .megamenu-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 32px;
-  padding: 32px;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: clamp(16px, 3vw, 32px);
+  padding: clamp(20px, 4vw, 32px);
 }
 
 /* Section Tags */

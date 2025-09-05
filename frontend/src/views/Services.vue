@@ -17,12 +17,13 @@
     <!-- Services Overview Section -->
     <section class="services-overview-section">
       <div class="container">
-        <div class="overview-header">
-          <div class="eyebrow font-mono">Competenze</div>
-          <h2>Dove facciamo la differenza</h2>
-        </div>
+        <div class="overview-card-wrapper">
+          <div class="overview-header">
+            <div class="eyebrow font-mono">Competenze</div>
+            <h2>Dove facciamo la differenza</h2>
+          </div>
 
-        <div class="overview-grid">
+          <div class="overview-grid">
           <div class="overview-card">
             <h3>Software scritto per te</h3>
             <div class="overview-tag sage">Sviluppo</div>
@@ -67,6 +68,7 @@
               </ul>
             </div>
           </div>
+        </div>
         </div>
       </div>
     </section>
@@ -394,6 +396,14 @@
   position: relative;
 }
 
+.overview-card-wrapper {
+  background: var(--chip-bg);
+  border-radius: 24px;
+  padding: 60px;
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
 .services-overview-section .container {
   max-width: 1400px;
   padding: 0 clamp(40px, 8vw, 120px);
@@ -427,7 +437,7 @@
 }
 
 .overview-card {
-  background: var(--chip-bg);
+  background: var(--bg);
   border-radius: 20px;
   padding: 32px;
   text-align: left;
@@ -948,16 +958,17 @@
 
 .services-cta {
   text-align: left;
-  max-width: 600px;
+  max-width: 800px;
   background: transparent;
   padding: 0;
 }
 
 .services-cta h2 {
-  font-size: clamp(32px, 4vw, 40px);
-  margin: 0 0 24px;
+  font-size: 32px;
+  margin: 0 0 20px;
   color: var(--fg);
-  font-weight: 400;
+  font-weight: 500;
+  font-family: var(--font-mono);
   line-height: 1.2;
 }
 
@@ -972,6 +983,7 @@
   display: flex;
   gap: 16px;
   flex-wrap: wrap;
+  justify-content: flex-start;
 }
 
 /* Responsive */
@@ -1057,6 +1069,11 @@
     padding: 20px;
   }
   
+  .overview-card-wrapper {
+    padding: 40px 24px;
+    border-radius: 20px;
+  }
+
   .overview-grid {
     grid-template-columns: 1fr;
     gap: 20px;
