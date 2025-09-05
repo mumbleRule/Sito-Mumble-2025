@@ -5,16 +5,9 @@
       <div class="container">
         <div class="hero-content">
           <div class="eyebrow font-mono">I nostri servizi</div>
-          <h1 class="title-letter-reveal">
-            <div class="title-line">
-              <span class="letter">C</span><span class="letter">o</span><span class="letter">m</span><span class="letter">e</span>
-            </div>
-            <div class="title-line">
-              <span class="letter">l</span><span class="letter">a</span><span class="letter">v</span><span class="letter">o</span><span class="letter">r</span><span class="letter">i</span><span class="letter">a</span><span class="letter">m</span><span class="letter">o</span>
-            </div>
-          </h1>
+          <h1>Risolviamo i problemi che rallentano il tuo business.</h1>
           <p class="hero-subtitle">
-            Ascoltiamo, progettiamo, sviluppiamo.
+            Development, integrazioni, gestionali.
           </p>
         </div>
       </div>
@@ -24,42 +17,53 @@
     <section class="services-overview-section">
       <div class="container">
         <div class="overview-header">
-          <h2>Come lavoriamo per te</h2>
-          <p>Tre aree di specializzazione per trasformare le tue idee in software che funziona</p>
+          <h2>Tre aree dove facciamo la differenza</h2>
         </div>
 
         <div class="overview-grid">
-          <div class="overview-card card-reveal" data-reveal="ascoltiamo">
+          <div class="overview-card">
+            <h3>Software scritto su misura per te</h3>
             <div class="overview-tag sage">Sviluppo</div>
-            <h3>Codice scritto per te</h3>
-            <p>Zero template. Ogni riga di codice pensata per le tue esigenze specifiche. Software che si integra con il tuo modo di lavorare.</p>
-            <ul class="overview-features">
-              <li>Development su misura</li>
-              <li>UX/UI Design funzionale</li>
-              <li>Tecnologie affidabili</li>
-            </ul>
+            <p>Zero template. Ogni progetto nasce per i tuoi processi. Python, Django, Vue.js: tecnologie affidabili per software che dura nel tempo.</p>
+            <div class="what-we-do">
+              <h4>Cosa sviluppiamo:</h4>
+              <ul class="overview-features">
+                <li>Gestionali aziendali personalizzati</li>
+                <li>Web app e piattaforme B2B</li>
+                <li>Sistemi di prenotazione e booking</li>
+                <li>App mobile integrate con backend</li>
+              </ul>
+            </div>
           </div>
 
-          <div class="overview-card card-reveal" data-reveal="progettiamo">
-            <div class="overview-tag warm-clay">Integrazione</div>
-            <h3>Sistemi che parlano</h3>
-            <p>Facciamo comunicare i tuoi software tra loro. Automazione dei processi per eliminare il lavoro manuale e gli errori.</p>
-            <ul class="overview-features">
-              <li>API e Integrazioni</li>
-              <li>Piattaforme B2B</li>
-              <li>Automazione processi</li>
-            </ul>
+          <div class="overview-card">
+            <h3>Sistemi che collaborano</h3>
+            <div class="overview-tag warm-clay">Integrazioni</div>
+            <p>Facciamo parlare i tuoi software tra loro. API, webhooks, sincronizzazioni automatiche per eliminare il lavoro manuale e gli errori.</p>
+            <div class="what-we-do">
+              <h4>Cosa integriamo:</h4>
+              <ul class="overview-features">
+                <li>CRM con sistemi di email marketing</li>
+                <li>E-commerce con gestione magazzino</li>
+                <li>App mobile con gestionali esistenti</li>
+                <li>Sistemi di prenotazione con calendari</li>
+              </ul>
+            </div>
           </div>
 
-          <div class="overview-card card-reveal" data-reveal="realizziamo">
-            <div class="overview-tag muted">Gestione</div>
-            <h3>Controllo totale</h3>
-            <p>Un'unica piattaforma per gestire clienti, vendite e processi. Dati chiari per decisioni strategiche che fanno crescere il business.</p>
-            <ul class="overview-features">
-              <li>CRM e Gestionali</li>
-              <li>Analytics e BI</li>
-              <li>Reporting automatico</li>
-            </ul>
+          <div class="overview-card">
+            <h3>Il controllo del tuo business</h3>
+            <div class="overview-tag muted">Gestionali</div>
+            <p>CRM, ERP, dashboard: sistemi completi per gestire clienti, vendite e processi. Tutto centralizzato, tutto sotto controllo.</p>
+            <div class="what-we-do">
+              <h4>Cosa gestiamo:</h4>
+              <ul class="overview-features">
+                <li>Clienti e pipeline di vendita</li>
+                <li>Magazzino e movimenti stock</li>
+                <li>Ordini e spedizioni</li>
+                <li>Analytics e reportistica</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -78,7 +82,7 @@
         <div class="category-services">
           <div id="development" class="service-card">
             <div class="service-header">
-              <h3>Development</h3>
+              <h3>Development su misura</h3>
               <div class="service-tags">
                 <span class="tag">Python</span>
                 <span class="tag">Django</span>
@@ -93,7 +97,7 @@
               <ul>
                 <li>Sistema di prenotazioni per spa con gestione trattamenti e terapisti</li>
                 <li>Gestionale vinicola con tracciabilità dalla vigna alla bottiglia</li>
-                <li>App per officine con diagnosi auto e preventivi automatici</li>
+                <li>Sistema per agenzie di marketing con campagne e reporting clienti</li>
               </ul>
             </div>
           </div>
@@ -239,6 +243,45 @@
       </div>
     </section>
 
+    <!-- Come lavoriamo Section -->
+    <section class="how-we-work-section">
+      <div class="container">
+        <div class="how-we-work-header">
+          <div class="eyebrow font-mono">Approccio</div>
+          <h2>Come lavoriamo</h2>
+          <p class="approach-lead">
+            Dal primo incontro al rilascio. Un processo collaudato per risultati concreti
+          </p>
+        </div>
+
+        <div class="work-process">
+          <div class="process-step fade-in">
+            <div class="process-step-header">
+              <div class="step-number sage">1</div>
+              <h3>Ascoltiamo</h3>
+            </div>
+            <p>Capiamo i tuoi processi attuali e dove perdono efficienza. Ogni progetto inizia dall'analisi dei tuoi flussi di lavoro.</p>
+          </div>
+
+          <div class="process-step fade-in">
+            <div class="process-step-header">
+              <div class="step-number warm-clay">2</div>
+              <h3>Progettiamo</h3>
+            </div>
+            <p>Disegniamo la soluzione più semplice che risolve il problema. Wireframe, mockup e architettura pensati per durare.</p>
+          </div>
+
+          <div class="process-step fade-in">
+            <div class="process-step-header">
+              <div class="step-number muted">3</div>
+              <h3>Sviluppiamo</h3>
+            </div>
+            <p>Codice pulito, test approfonditi, rilasci graduali. Ogni funzionalità viene testata prima di arrivare in produzione.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA Section -->
     <section class="services-cta-section">
       <div class="container">
@@ -282,220 +325,172 @@
 /* Hero Section */
 .services-hero {
   background: var(--bg);
-  padding: 120px 0 40px;
+  padding: clamp(100px, 12vw, 140px) 0 clamp(40px, 6vw, 60px);
   width: 100%;
+  position: relative;
+}
+
+.services-hero .container {
+  max-width: 1400px;
+  padding: 0 clamp(40px, 8vw, 120px);
+}
+
+.services-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, var(--sage) 0%, transparent 70%);
+  opacity: 0.03;
+  border-radius: 50%;
+  transform: translate(50%, -50%);
 }
 
 .hero-content {
-  max-width: 800px;
+  text-align: left;
+  max-width: 900px;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-content .eyebrow {
   color: var(--muted);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 500;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 32px;
+  font-family: var(--font-mono);
 }
 
 .hero-content h1 {
-  font-size: clamp(40px, 5vw, 56px);
-  margin: 0 0 24px;
+  font-size: clamp(42px, 6vw, 64px);
+  margin: 0 0 32px;
   font-weight: 400;
   line-height: 1.1;
   color: var(--fg);
-}
-
-/* Title Letter by Letter Animation */
-.title-letter-reveal .letter {
-  opacity: 0;
-  animation: letterReveal 0.1s ease-out forwards;
-  display: inline-block;
-}
-
-.title-line {
-  display: block;
-  margin-bottom: 8px;
-}
-
-.title-line:last-child {
-  margin-bottom: 0;
-}
-
-/* Timing per ogni riga con pause tra le righe - VELOCIZZATO */
-/* Prima riga: Ascoltiamo, */
-.title-line:nth-child(1) .letter:nth-child(1) { animation-delay: 0.05s; }
-.title-line:nth-child(1) .letter:nth-child(2) { animation-delay: 0.1s; }
-.title-line:nth-child(1) .letter:nth-child(3) { animation-delay: 0.15s; }
-.title-line:nth-child(1) .letter:nth-child(4) { animation-delay: 0.2s; }
-.title-line:nth-child(1) .letter:nth-child(5) { animation-delay: 0.25s; }
-.title-line:nth-child(1) .letter:nth-child(6) { animation-delay: 0.3s; }
-.title-line:nth-child(1) .letter:nth-child(7) { animation-delay: 0.35s; }
-.title-line:nth-child(1) .letter:nth-child(8) { animation-delay: 0.4s; }
-.title-line:nth-child(1) .letter:nth-child(9) { animation-delay: 0.45s; }
-.title-line:nth-child(1) .letter:nth-child(10) { animation-delay: 0.5s; }
-.title-line:nth-child(1) .letter:nth-child(11) { animation-delay: 0.55s; }
-
-/* Seconda riga: Progettiamo, */
-.title-line:nth-child(2) .letter:nth-child(1) { animation-delay: 0.7s; }
-.title-line:nth-child(2) .letter:nth-child(2) { animation-delay: 0.75s; }
-.title-line:nth-child(2) .letter:nth-child(3) { animation-delay: 0.8s; }
-.title-line:nth-child(2) .letter:nth-child(4) { animation-delay: 0.85s; }
-.title-line:nth-child(2) .letter:nth-child(5) { animation-delay: 0.9s; }
-.title-line:nth-child(2) .letter:nth-child(6) { animation-delay: 0.95s; }
-.title-line:nth-child(2) .letter:nth-child(7) { animation-delay: 1.0s; }
-.title-line:nth-child(2) .letter:nth-child(8) { animation-delay: 1.05s; }
-.title-line:nth-child(2) .letter:nth-child(9) { animation-delay: 1.1s; }
-.title-line:nth-child(2) .letter:nth-child(10) { animation-delay: 1.15s; }
-.title-line:nth-child(2) .letter:nth-child(11) { animation-delay: 1.2s; }
-.title-line:nth-child(2) .letter:nth-child(12) { animation-delay: 1.25s; }
-
-/* Terza riga: Realizziamo. */
-.title-line:nth-child(3) .letter:nth-child(1) { animation-delay: 1.4s; }
-.title-line:nth-child(3) .letter:nth-child(2) { animation-delay: 1.45s; }
-.title-line:nth-child(3) .letter:nth-child(3) { animation-delay: 1.5s; }
-.title-line:nth-child(3) .letter:nth-child(4) { animation-delay: 1.55s; }
-.title-line:nth-child(3) .letter:nth-child(5) { animation-delay: 1.6s; }
-.title-line:nth-child(3) .letter:nth-child(6) { animation-delay: 1.65s; }
-.title-line:nth-child(3) .letter:nth-child(7) { animation-delay: 1.7s; }
-.title-line:nth-child(3) .letter:nth-child(8) { animation-delay: 1.75s; }
-.title-line:nth-child(3) .letter:nth-child(9) { animation-delay: 1.8s; }
-.title-line:nth-child(3) .letter:nth-child(10) { animation-delay: 1.85s; }
-.title-line:nth-child(3) .letter:nth-child(11) { animation-delay: 1.9s; }
-.title-line:nth-child(3) .letter:nth-child(12) { animation-delay: 1.95s; }
-
-@keyframes letterReveal {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  letter-spacing: -0.01em;
 }
 
 .hero-subtitle {
-  font-size: 24px;
-  line-height: 1.4;
-  color: var(--fg);
+  font-size: clamp(20px, 2.5vw, 26px);
+  line-height: 1.5;
+  color: var(--muted);
   margin: 0;
-  font-weight: 600;
-  font-family: var(--font-mono);
+  font-weight: 300;
 }
 
 /* Services Overview Section */
 .services-overview-section {
   background: var(--bg);
-  padding: 0 0 60px;
+  padding: clamp(40px, 6vw, 60px) 0 clamp(80px, 10vw, 120px);
   width: 100%;
+  position: relative;
+}
+
+.services-overview-section .container {
+  max-width: 1400px;
+  padding: 0 clamp(40px, 8vw, 120px);
 }
 
 .overview-header {
   text-align: left;
-  margin-bottom: 60px;
+  margin-bottom: 48px;
   max-width: 800px;
 }
 
 .overview-header h2 {
   font-size: clamp(32px, 4vw, 40px);
-  margin: 0 0 20px;
+  margin: 0;
   font-weight: 400;
   color: var(--fg);
-}
-
-.overview-header p {
-  font-size: 20px;
-  line-height: 1.6;
-  color: var(--muted);
-  margin: 0;
 }
 
 .overview-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 4vw, 48px);
 }
 
 .overview-card {
   background: var(--chip-bg);
-  border-radius: 12px;
-  padding: 32px;
+  border-radius: 20px;
+  padding: 40px;
   text-align: left;
-  transition: transform 0.3s ease;
+  transition: all 0.4s ease;
+  border: 1px solid var(--line);
+  position: relative;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
 }
 
 .overview-card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
 }
 
-/* Card Reveal Animation - sincronizzata con il titolo */
-.card-reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: cardReveal 0.6s ease-out forwards;
+/* Animazioni progressive per le card */
+.overview-card:nth-child(1) {
+  animation-delay: 0.1s;
 }
 
-/* Timing sincronizzato con la lettera iniziale di ogni parola */
-.card-reveal[data-reveal="ascoltiamo"] {
-  animation-delay: 0.05s; /* Appare con la "A" di "Ascoltiamo" */
+.overview-card:nth-child(2) {
+  animation-delay: 0.3s;
 }
 
-.card-reveal[data-reveal="progettiamo"] {
-  animation-delay: 0.7s; /* Appare con la "P" di "Progettiamo" */
+.overview-card:nth-child(3) {
+  animation-delay: 0.5s;
 }
 
-.card-reveal[data-reveal="realizziamo"] {
-  animation-delay: 1.4s; /* Appare con la "R" di "Realizziamo" */
-}
 
-@keyframes cardReveal {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 .overview-tag {
   font-family: var(--font-mono);
   font-size: 12px;
-  font-weight: 600;
+  font-weight: 500;
   padding: 6px 12px;
   border-radius: 6px;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
-  margin-bottom: 20px;
+  letter-spacing: 0.08em;
+  margin-bottom: 24px;
   display: inline-block;
   color: white;
+  position: relative;
+  animation: tagPulse 2s infinite;
 }
 
 .overview-tag.sage {
   background: var(--sage);
+  animation-delay: 0s;
 }
 
 .overview-tag.warm-clay {
   background: var(--warm-clay);
+  animation-delay: 0.3s;
 }
 
 .overview-tag.muted {
   background: var(--muted);
+  animation-delay: 0.6s;
 }
 
 .overview-card h3 {
-  font-size: 24px;
-  margin: 0 0 16px;
-  font-weight: 400;
+  font-size: 32px;
+  margin: 0 0 28px;
+  font-weight: 500;
   color: var(--fg);
+  line-height: 1.2;
 }
 
 .overview-card p {
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.6;
   color: var(--muted);
-  margin: 0 0 24px;
+  margin: 0 0 32px;
 }
 
 .overview-features {
@@ -518,6 +513,29 @@
   left: 0;
   color: var(--sage);
   font-weight: 600;
+}
+
+/* Colori specifici per le frecce delle diverse card */
+.overview-card:has(.overview-tag.warm-clay) .overview-features li::before {
+  color: var(--warm-clay);
+}
+
+.overview-card:has(.overview-tag.muted) .overview-features li::before {
+  color: var(--muted);
+}
+
+.what-we-do {
+  margin-top: 24px;
+}
+
+.what-we-do h4 {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fg);
+  margin: 0 0 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 /* Sottotitolo senza animazione - appare subito */
@@ -606,6 +624,35 @@
   background: none;
 }
 
+.service-stack {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.stack-label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.stack-tech {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--fg);
+}
+
+.stack-separator {
+  color: var(--muted);
+  font-weight: 400;
+}
+
 .tag {
   font-family: var(--font-mono);
   font-size: 12px;
@@ -669,6 +716,24 @@
   }
 }
 
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+}
+
 .service-description {
   font-size: 16px;
   line-height: 1.6;
@@ -715,6 +780,148 @@
   top: 6px;
 }
 
+/* Come lavoriamo Section */
+.how-we-work-section {
+  background: var(--bg);
+  padding: 80px 0;
+  width: 100%;
+}
+
+.how-we-work-section .container {
+  max-width: 1400px;
+  padding: 0 clamp(40px, 8vw, 120px);
+}
+
+.how-we-work-header {
+  text-align: left;
+  margin-bottom: 60px;
+}
+
+.how-we-work-header .eyebrow {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.how-we-work-header h2 {
+  font-size: 32px;
+  margin: 0 0 16px;
+  color: var(--fg);
+  font-family: var(--font-mono);
+}
+
+.approach-lead {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+}
+
+.approach-lead strong {
+  color: var(--warm-clay);
+  font-weight: 600;
+}
+
+.work-process {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: clamp(24px, 4vw, 32px);
+}
+
+.process-step {
+  background: var(--chip-bg);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: left;
+  border: 1px solid var(--line);
+  transition: all 0.4s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.process-step:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.process-step:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.process-step:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+.process-step:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.process-step-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.step-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 600;
+  flex-shrink: 0;
+  animation: tagPulse 2s infinite;
+}
+
+.step-number.sage {
+  background: var(--sage);
+}
+
+.step-number.warm-clay {
+  background: var(--warm-clay);
+}
+
+.step-number.muted {
+  background: var(--muted);
+}
+
+/* Delay specifici per ogni step number */
+.process-step:nth-child(1) .step-number {
+  animation-delay: 0.2s;
+}
+
+.process-step:nth-child(2) .step-number {
+  animation-delay: 0.5s;
+}
+
+.process-step:nth-child(3) .step-number {
+  animation-delay: 0.8s;
+}
+
+.process-step h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--fg);
+  margin: 0;
+  font-family: var(--font-mono);
+}
+
+.process-step p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0;
+}
+
 /* CTA Section */
 .services-cta-section {
   background: transparent;
@@ -752,11 +959,56 @@
 /* Responsive */
 @media (max-width: 768px) {
   .services-hero {
-    padding: 80px 0 30px;
+    padding: clamp(80px, 10vw, 100px) 0 clamp(60px, 8vw, 80px);
+  }
+
+  .services-hero::before {
+    width: 150px;
+    height: 150px;
+  }
+
+  .hero-content .eyebrow {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+
+  .hero-content h1 {
+    font-size: clamp(32px, 8vw, 42px);
   }
 
   .hero-subtitle {
-    font-size: 20px;
+    font-size: clamp(18px, 4vw, 22px);
+  }
+
+  .services-hero .container,
+  .services-overview-section .container,
+  .how-we-work-section .container {
+    padding: 0 clamp(24px, 6vw, 40px);
+  }
+
+  .services-overview-section {
+    padding: clamp(32px, 6vw, 40px) 0 clamp(60px, 8vw, 80px);
+  }
+
+  .overview-header {
+    margin-bottom: 40px;
+  }
+
+  .overview-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .overview-card {
+    padding: 32px;
+  }
+
+  .overview-card h3 {
+    font-size: 24px;
+  }
+
+  .overview-card p {
+    font-size: 16px;
   }
   
   .services-overview-section {
@@ -787,10 +1039,46 @@
     padding: 20px;
   }
   
+  .how-we-work-section {
+    padding: 60px 0;
+  }
+
+  .how-we-work-header {
+    margin-bottom: 40px;
+  }
+
+  .work-process {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .process-step {
+    padding: 32px;
+  }
+
+  .process-step-header {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .process-step h3 {
+    font-size: 18px;
+  }
+
+  .process-step p {
+    font-size: 15px;
+  }
+
   .services-cta-section {
     padding: 60px 0;
   }
-  
+
   .cta-buttons {
     flex-direction: column;
     align-items: flex-start;

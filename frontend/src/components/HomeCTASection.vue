@@ -6,9 +6,12 @@
         <p>
           Raccontaci la tua idea. Ti spieghiamo come trasformarla in software che risolve problemi reali.
         </p>
-        <div class="cta-button">
+        <div class="cta-buttons">
           <router-link to="/contatti" class="btn primary large">
             Parliamo del tuo progetto
+          </router-link>
+          <router-link to="/servizi" class="btn secondary large">
+            Scopri i nostri servizi
           </router-link>
         </div>
       </div>
@@ -22,22 +25,23 @@
 
 <style scoped>
 .home-cta-section {
-  background: var(--bg);
-  padding: 80px 0;
+  background: var(--chip-bg);
+  padding: 100px 0;
   width: 100%;
 }
 
 .home-cta {
   text-align: left;
-  max-width: 600px;
+  max-width: 700px;
 }
 
 .home-cta h2 {
-  font-size: clamp(32px, 4vw, 40px);
-  margin: 0 0 24px;
+  font-size: 32px;
+  margin: 0 0 12px;
   color: var(--fg);
-  font-weight: 400;
+  font-weight: 500;
   line-height: 1.2;
+  font-family: var(--font-mono);
 }
 
 .home-cta p {
@@ -45,48 +49,78 @@
   color: var(--muted);
   margin: 0 0 32px;
   line-height: 1.6;
+  max-width: 60ch;
 }
 
-.cta-button {
+.cta-buttons {
   display: flex;
+  gap: 16px;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
-.btn.primary {
-  font-size: 16px;
-  padding: 14px 32px;
-  transition: all 0.3s ease;
+.btn.large {
+  font-size: 18px;
+  padding: 18px 36px;
+  font-weight: 600;
+  border-radius: 12px;
 }
 
 .btn.primary.large {
-  font-size: 18px;
-  padding: 18px 40px;
-  font-weight: 600;
+  background: #00000020;
+  color: var(--fg);
+  border-color: var(--line);
 }
 
-.btn.primary:hover {
+.btn.primary.large:hover {
+  background: #00000030;
+  border-color: var(--muted);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.btn.secondary.large {
+  background: var(--sage);
+  color: #fff;
+  border-color: var(--sage);
+}
+
+.btn.secondary.large:hover {
+  background: #8fa373;
+  border-color: #8fa373;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(163, 177, 138, 0.3);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
   .home-cta-section {
-    padding: 60px 0;
+    padding: 80px 0;
   }
-  
+
   .home-cta {
     padding: 0 24px;
   }
-  
+
   .home-cta h2 {
-    font-size: clamp(28px, 6vw, 32px);
-    margin-bottom: 20px;
+    font-size: clamp(28px, 6vw, 36px);
+    margin-bottom: 24px;
   }
-  
+
   .home-cta p {
-    font-size: 16px;
-    margin-bottom: 28px;
+    font-size: 18px;
+    margin-bottom: 32px;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn.large {
+    width: 100%;
+    text-align: center;
+    padding: 16px 32px;
   }
 }
 </style>

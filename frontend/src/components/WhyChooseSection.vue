@@ -7,22 +7,23 @@
         <h2>Perché scegliere noi</h2>
         <p class="section-intro">Tre motivi per cui i nostri clienti ci scelgono</p>
 
-        <div class="principles-content">
-          <div class="principle-main">
+        <div class="principles-cards">
+          <div class="principle-card">
+            <div class="card-number sage">01</div>
             <h3>Software su misura</h3>
             <p><strong>Zero template. Solo codice tuo.</strong> Ogni riga di codice è scritta per le tue esigenze specifiche. Nessun compromesso.</p>
           </div>
 
-          <div class="principles-highlights">
-            <div class="highlight-item">
-              <h3>Esperti del B2B</h3>
-              <p><strong>Capiamo il business.</strong> Sviluppiamo gestionali che migliorano davvero i processi aziendali. Software che fa crescere le aziende.</p>
-            </div>
+          <div class="principle-card">
+            <div class="card-number warm-clay">02</div>
+            <h3>Esperti del B2B</h3>
+            <p><strong>Capiamo il business.</strong> Sviluppiamo gestionali che migliorano davvero i processi aziendali. Software che fa crescere le aziende.</p>
+          </div>
 
-            <div class="highlight-item">
-              <h3>Stack affidabile</h3>
-              <p><strong>Django + Vue.js + PostgreSQL.</strong> Tecnologie mature e performanti per applicazioni che durano nel tempo.</p>
-            </div>
+          <div class="principle-card">
+            <div class="card-number muted">03</div>
+            <h3>Stack affidabile</h3>
+            <p><strong>Django + Vue.js + PostgreSQL.</strong> Tecnologie mature e performanti per applicazioni che durano nel tempo.</p>
           </div>
         </div>
       </div>
@@ -60,10 +61,16 @@
   margin-bottom: 0;
 }
 
+.why-mumble-section .eyebrow {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
 .why-mumble-section h2 {
-  font-size: clamp(32px, 4vw, 40px);
-  margin: 0 0 16px;
-  font-weight: 400;
+  font-size: 32px;
+  margin: 0 0 12px;
+  font-weight: 500;
+  font-family: var(--font-mono);
   line-height: 1.2;
   color: var(--fg);
   text-align: left;
@@ -77,102 +84,76 @@
   font-weight: 400;
 }
 
-.principles-content {
-  max-width: none;
-  margin: 0;
-}
-
-.principle-main {
-  margin-bottom: 40px;
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeInUp 0.6s ease forwards;
-  animation-delay: 0.1s;
-}
-
-.principle-main h3 {
-  font-size: 28px;
-  margin: 0 0 20px;
-  color: var(--fg);
-  font-family: var(--font-mono);
-  font-weight: 600;
-  position: relative;
-  padding-bottom: 12px;
-}
-
-.principle-main h3::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 60px;
-  height: 3px;
-  background: var(--sage);
-  border-radius: 2px;
-}
-
-.principle-main p {
-  font-size: 18px;
-  line-height: 1.6;
-  color: var(--muted);
-  margin: 0;
-  text-align: left;
-  font-weight: 400;
-}
-
-.principles-content .principle-main p strong {
-  font-weight: 700 !important;
-  color: var(--fg) !important;
-}
-
-.principles-highlights {
+.principles-cards {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 4vw, 40px);
+  margin: 0;
 }
 
-.highlight-item {
+.principle-card {
+  background: var(--chip-bg);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: left;
+  border: 1px solid var(--line);
+  transition: all 0.4s ease;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 0.6s ease forwards;
+  position: relative;
+  overflow: hidden;
 }
 
-.highlight-item:nth-child(1) { animation-delay: 0.2s; }
-.highlight-item:nth-child(2) { animation-delay: 0.3s; }
+.principle-card:nth-child(1) { animation-delay: 0.1s; }
+.principle-card:nth-child(2) { animation-delay: 0.3s; }
+.principle-card:nth-child(3) { animation-delay: 0.5s; }
 
-.highlight-item h3 {
-  font-size: 22px;
+.principle-card:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+.card-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  animation: tagPulse 2s infinite;
+}
+
+.card-number.sage {
+  background: var(--sage);
+  animation-delay: 0.2s;
+}
+
+.card-number.warm-clay {
+  background: var(--warm-clay);
+  animation-delay: 0.5s;
+}
+
+.card-number.muted {
+  background: var(--muted);
+  animation-delay: 0.8s;
+}
+
+.principle-card h3 {
+  font-size: 24px;
   margin: 0 0 16px;
   color: var(--fg);
   font-family: var(--font-mono);
   font-weight: 600;
-  position: relative;
-  padding-bottom: 10px;
+  line-height: 1.2;
 }
 
-.highlight-item:first-child h3::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 40px;
-  height: 3px;
-  background: var(--warm-clay);
-  border-radius: 2px;
-}
-
-.highlight-item:last-child h3::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 40px;
-  height: 3px;
-  background: var(--muted);
-  border-radius: 2px;
-}
-
-.highlight-item p {
+.principle-card p {
   font-size: 16px;
   line-height: 1.6;
   color: var(--muted);
@@ -181,7 +162,7 @@
   font-weight: 400;
 }
 
-.principles-content .highlight-item p strong {
+.principle-card p strong {
   font-weight: 700 !important;
   color: var(--fg) !important;
 }
@@ -202,6 +183,17 @@
   }
 }
 
+@keyframes tagPulse {
+  0%, 100% {
+    opacity: 0.7;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
 /* Rimosso: Animazioni geometriche non più necessarie */
 
 /* Responsive */
@@ -210,36 +202,30 @@
     padding: 0 24px;
   }
 
-  .principle-main {
-    margin-bottom: 24px;
-  }
-
-  .principle-main h3 {
-    font-size: 24px;
-  }
-
-  .principle-main p {
-    font-size: 16px;
-  }
-
-  .principles-highlights {
+  .principles-cards {
     grid-template-columns: 1fr;
     gap: 24px;
   }
 
-  .highlight-item h3 {
-    font-size: 20px;
+  .principle-card {
+    padding: 32px;
   }
 
-  .highlight-item p {
+  .card-number {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .principle-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .principle-card p {
     font-size: 15px;
   }
-
-  /* Stili responsive processo di lavoro spostati in WorkProcessSection.vue */
-
-
-
-  /* Stili responsive CTA rimossi */
 }
 
 

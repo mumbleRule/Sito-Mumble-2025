@@ -55,9 +55,9 @@ def site_settings_view(request):
             # Restituiamo valori di default se non ci sono impostazioni
             default_data = {
                 "site_title": "Mumble",
-                "hero_title": "Gestionale su misura.\nProcessi più fluidi.\nCrescita misurabile.",
-                "hero_subtitle": "Creiamo gestionali B2B che liberano tempo e risorse.",
-                "hero_description": "Trasformiamo la complessità dei tuoi processi in percorsi chiari ed efficienti. Con TOC e AI, ogni ostacolo diventa l'occasione per accelerare la crescita della tua azienda.",
+                "hero_title": "Software su misura.\nZero compromessi.",
+                "hero_subtitle": "Trasformiamo le tue idee in soluzioni digitali che funzionano.",
+                "hero_description": "",
                 "contact_email": "info@mumble.group",
                 "contact_phone": ""
             }

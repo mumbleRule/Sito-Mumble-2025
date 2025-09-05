@@ -45,7 +45,13 @@ body {
 }
 
 /* Container interni per sezioni */
-.hero-container,
+.hero-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(40px, 8vw, 120px);
+  width: 100%;
+}
+
 .services-container {
   max-width: 1200px;
   margin: 0 auto;
@@ -114,80 +120,92 @@ nav a.router-link-active {
 
 /* Hero Section */
 .hero {
-  padding: clamp(60px, 12vw, 140px) 0;
+  padding: clamp(120px, 16vw, 200px) 0;
   position: relative;
   overflow: hidden;
   background: var(--bg);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 .eyebrow {
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-size: 12px;
+  font-size: 18px;
   color: var(--muted);
   font-family: var(--font-mono);
-  font-weight: 400;
-  margin-bottom: 16px;
+  font-weight: 500;
+  margin-bottom: 32px;
 }
 
 h1 {
-  font-size: clamp(40px, 6vw, 68px);
-  line-height: 1.1;
-  margin: 0 0 24px;
+  font-size: clamp(56px, 8vw, 96px);
+  line-height: 1.05;
+  margin: 0 0 40px;
   font-weight: 400;
+  letter-spacing: -0.02em;
+  max-width: 85%;
 }
 
 .lead {
-  font-size: 18px;
+  font-size: clamp(20px, 2.5vw, 28px);
   color: var(--muted);
-  margin: 0 0 48px;
-  max-width: 60ch;
+  margin: 0 0 64px;
+  max-width: min(75ch, 70%);
+  line-height: 1.4;
+  font-weight: 300;
 }
 
 .cta {
   display: flex;
-  gap: 14px;
+  gap: 20px;
   flex-wrap: wrap;
 }
 
 .btn {
   background: transparent;
   color: var(--fg);
-  padding: 12px 20px;
-  border-radius: 8px;
+  padding: 16px 28px;
+  border-radius: 12px;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 16px;
   font-family: var(--font-mono);
   text-decoration: none;
   border: 1px solid var(--line);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   display: inline-block;
+  letter-spacing: 0.02em;
 }
 
 .btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
 .btn.primary {
   background: var(--fg);
   color: #fff;
   border-color: var(--fg);
+  font-weight: 600;
 }
 
 .btn.primary:hover {
   background: #000;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
 .btn.secondary {
-  background: #fff;
+  background: var(--chip-bg);
   color: var(--fg);
   border-color: var(--line);
 }
 
 .btn.secondary:hover {
-  background: #f9f9f9;
+  background: #fff;
+  border-color: var(--muted);
 }
 
 /* Services Section */
@@ -401,10 +419,13 @@ h1 {
 /* Responsive Design */
 @media (max-width: 768px) {
   .container,
-  .hero-container,
   .services-container,
   .projects-container {
     padding: 16px 24px;
+  }
+
+  .hero-container {
+    padding: 0 clamp(24px, 6vw, 40px);
   }
 
   .header-container {
@@ -418,14 +439,36 @@ h1 {
     gap: 12px;
   }
 
+  .hero {
+    padding: clamp(80px, 12vw, 120px) 0;
+    min-height: 70vh;
+  }
+
+  .eyebrow {
+    font-size: 16px;
+    margin-bottom: 24px;
+  }
+
+  h1 {
+    max-width: 95%;
+  }
+
+  .lead {
+    font-size: clamp(18px, 4vw, 22px);
+    margin-bottom: 48px;
+    max-width: 90%;
+  }
+
   .cta {
     flex-direction: column;
     align-items: flex-start;
+    gap: 16px;
   }
 
   .btn {
     width: 100%;
     text-align: center;
+    padding: 14px 24px;
   }
 
   /* Services Grid responsive */

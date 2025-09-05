@@ -10,19 +10,20 @@
           <div class="category-section">
             <h3 class="category-header">{{ category.title }}</h3>
             <div class="category-cards">
-              <div
+              <router-link
                 v-for="(service, serviceIndex) in category.services"
                 :key="`${categoryIndex}-${serviceIndex}`"
+                :to="getServiceLink(service.title)"
                 class="service-card fade-in"
               >
                 <div class="card-header">
-                  <h4 class="service-title">{{ service.title }}</h4>
                   <span class="service-tags">{{ service.subtitle }}</span>
+                  <h4 class="service-title">{{ service.title }}</h4>
                 </div>
                 <div class="card-content">
                   <p class="service-description" v-html="service.description"></p>
                 </div>
-              </div>
+              </router-link>
             </div>
           </div>
         </template>
@@ -35,7 +36,7 @@
         </p>
         <div class="cta-buttons">
           <router-link class="btn primary" to="/contatti">
-            Richiedi consulenza
+            Contattaci
           </router-link>
           <router-link class="btn secondary" to="/servizi">
             Scopri tutti i servizi
@@ -52,6 +53,20 @@ import { apiService } from '../services/api.js'
 
 const services = ref([])
 const loading = ref(true)
+
+// Funzione per mappare i servizi ai loro link nella pagina servizi
+const getServiceLink = (serviceTitle) => {
+  const serviceLinks = {
+    'Development su misura': '/servizi#sviluppo',
+    'UX/UI Design': '/servizi#sviluppo',
+    'API e Integrazioni': '/servizi#integrazione',
+    'Piattaforme B2B': '/servizi#integrazione',
+    'CRM e Gestionali': '/servizi#gestione',
+    'Analytics e BI': '/servizi#gestione'
+  }
+
+  return serviceLinks[serviceTitle] || '/servizi'
+}
 
 // Struttura organizzata dei servizi per categorie
 const serviceCategories = ref([
@@ -146,5 +161,21 @@ onMounted(async () => {
 </script>
 
 <style scoped>
-/* Gli stili sono già definiti nel CSS globale */
+/* Stili per le card cliccabili */
+.service-card {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.service-card:visited {
+  color: inherit;
+}
 </style>

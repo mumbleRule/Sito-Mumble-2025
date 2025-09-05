@@ -20,9 +20,10 @@
     </div>
 
     <div v-else class="featured-projects">
-      <div
+      <router-link
         v-for="(project, index) in projects.slice(0, 6)"
         :key="project.id"
+        :to="`/progetti/${project.id}`"
         class="project-card fade-in"
         :class="getCardVariant(index)"
       >
@@ -41,7 +42,7 @@
             {{ project.technologies }}
           </div>
         </div>
-      </div>
+      </router-link>
     </div>
 
       <div class="projects-link" v-if="projects.length > 0">
@@ -139,32 +140,36 @@ onMounted(async () => {
   text-align: left;
 }
 
-/* Projects Link - Stile intermedio */
+/* Projects Link - Stile prominente */
 .projects-link {
   text-align: left;
-  padding: 40px 0 0;
-  margin-top: 32px;
+  padding: 60px 0 0;
+  margin-top: 40px;
 }
 
 .projects-btn {
   display: inline-flex;
   align-items: center;
-  font-size: 16px;
-  font-weight: 500;
-  color: var(--fg);
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
   text-decoration: none;
-  padding: 12px 24px;
-  border: 2px solid var(--line);
-  border-radius: 8px;
-  background: transparent;
+  padding: 18px 36px;
+  border: 1px solid var(--fg);
+  border-radius: 12px;
+  background: var(--fg);
   transition: all 0.3s ease;
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .projects-btn:hover {
-  border-color: var(--sage);
-  background: var(--sage);
-  color: white;
-  transform: translateY(-1px);
+  background: #000;
+  border-color: #000;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .loading, .no-projects {
@@ -176,9 +181,34 @@ onMounted(async () => {
 /* Featured Projects Card Styles - Homepage */
 .featured-projects .project-card {
   background: var(--bg) !important;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-projects .project-card:hover {
+  text-decoration: none;
+  color: inherit;
+}
+
+.featured-projects .project-card:visited {
+  color: inherit;
 }
 
 .featured-projects .project-card-content {
   background: var(--bg) !important;
+}
+
+/* Limitazione testo descrizione a 4 righe */
+.featured-projects .project-card-content p {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5;
+  max-height: calc(1.5em * 4); /* 4 righe */
 }
 </style>

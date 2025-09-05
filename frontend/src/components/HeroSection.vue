@@ -23,8 +23,8 @@
 import { ref, onMounted } from 'vue'
 import { apiService } from '../services/api.js'
 
-const heroTitle = ref('Software che funziona.<br/>Davvero.')
-const heroSubtitle = ref('Trasformiamo le tue idee in software su misura.')
+const heroTitle = ref('Software su misura.<br/>Zero compromessi.')
+const heroSubtitle = ref('Trasformiamo le tue idee in soluzioni digitali che funzionano.')
 const heroDescription = ref('')
 
 // Carica le impostazioni del sito
