@@ -123,4 +123,50 @@
     padding: 16px 32px;
   }
 }
+
+/* Responsive breakpoints per allineamento su schermi grandi */
+/* Large screens - Desktop (≥1200px) */
+@media (min-width: 1200px) {
+  .home-cta {
+    max-width: 800px;
+  }
+
+  .home-cta h2 {
+    max-width: 50ch;
+  }
+
+  .home-cta p {
+    max-width: 60ch;
+  }
+}
+
+/* Extra Large screens - Large Desktop (≥1400px) */
+@media (min-width: 1400px) {
+  .home-cta {
+    max-width: 900px;
+  }
+
+  .home-cta h2 {
+    max-width: 55ch;
+  }
+
+  .home-cta p {
+    max-width: 65ch;
+  }
+}
+
+/* Ultra Wide screens (≥1800px) */
+@media (min-width: 1800px) {
+  .home-cta {
+    max-width: 1000px;
+  }
+
+  .home-cta h2 {
+    max-width: 60ch;
+  }
+
+  .home-cta p {
+    max-width: 70ch;
+  }
+}
 </style>

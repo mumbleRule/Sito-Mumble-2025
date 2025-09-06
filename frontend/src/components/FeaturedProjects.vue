@@ -211,4 +211,38 @@ onMounted(async () => {
   line-height: 1.5;
   max-height: calc(1.5em * 4); /* 4 righe */
 }
+
+/* Responsive breakpoints per allineamento su schermi grandi */
+/* Large screens - Desktop (≥1200px) */
+@media (min-width: 1200px) {
+  .featured-projects-section h2 {
+    max-width: 50ch;
+  }
+
+  .featured-projects-section .section-subtitle {
+    max-width: 60ch;
+  }
+}
+
+/* Extra Large screens - Large Desktop (≥1400px) */
+@media (min-width: 1400px) {
+  .featured-projects-section h2 {
+    max-width: 55ch;
+  }
+
+  .featured-projects-section .section-subtitle {
+    max-width: 65ch;
+  }
+}
+
+/* Ultra Wide screens (≥1800px) */
+@media (min-width: 1800px) {
+  .featured-projects-section h2 {
+    max-width: 60ch;
+  }
+
+  .featured-projects-section .section-subtitle {
+    max-width: 70ch;
+  }
+}
 </style>

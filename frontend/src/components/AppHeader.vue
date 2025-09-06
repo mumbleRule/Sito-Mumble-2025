@@ -6,10 +6,27 @@
       </router-link>
 
       <!-- Desktop Navigation -->
-      <nav class="navbar-nav desktop-nav">
-        <div class="nav-item" @mouseenter="showMegamenu('servizi')" @mouseleave="hideMegamenu">
+      <nav class="navbar-nav desktop-nav" @mouseleave="scheduleMegamenuClose">
+        <div class="nav-item" @mouseenter="showMegamenu('servizi')">
           <router-link to="/servizi" class="nav-link">Servizi</router-link>
-          <div class="megamenu" :class="{ 'active': activeMegamenu === 'servizi' }">
+        </div>
+
+        <div class="nav-item" @mouseenter="showMegamenu('progetti')">
+          <router-link to="/progetti" class="nav-link">Progetti</router-link>
+        </div>
+
+        <div class="nav-item" @mouseenter="showMegamenu('contatti')">
+          <router-link to="/contatti" class="nav-link">Contattaci</router-link>
+        </div>
+
+        <!-- Megamenu Container Unico -->
+        <div class="megamenu-container"
+             :class="{ 'active': !!activeMegamenu }"
+             @mouseenter="cancelMegamenuClose"
+             @mouseleave="scheduleMegamenuClose">
+
+          <!-- Megamenu Servizi -->
+          <div v-show="activeMegamenu === 'servizi'" class="megamenu servizi-megamenu">
             <div class="megamenu-content">
               <div class="megamenu-section">
                 <div class="section-tag sage">Sviluppo</div>
@@ -34,11 +51,9 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="nav-item" @mouseenter="showMegamenu('progetti')" @mouseleave="hideMegamenu">
-          <router-link to="/progetti" class="nav-link">Progetti</router-link>
-          <div class="megamenu" :class="{ 'active': activeMegamenu === 'progetti' }">
+          <!-- Megamenu Progetti -->
+          <div v-show="activeMegamenu === 'progetti'" class="megamenu progetti-megamenu">
             <div class="megamenu-content">
               <div class="megamenu-section">
                 <div class="section-tag sage">Progetti</div>
@@ -62,11 +77,9 @@
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="nav-item" @mouseenter="showMegamenu('contatti')" @mouseleave="hideMegamenu">
-          <router-link to="/contatti" class="nav-link">Contattaci</router-link>
-          <div class="megamenu" :class="{ 'active': activeMegamenu === 'contatti' }">
+          <!-- Megamenu Contatti -->
+          <div v-show="activeMegamenu === 'contatti'" class="megamenu contatti-megamenu">
             <div class="megamenu-content">
               <div class="megamenu-section">
                 <div class="section-tag sage">Parliamo del tuo progetto</div>
@@ -138,13 +151,64 @@ const closeMobileMenu = () => {
   isMobileMenuOpen.value = false
 }
 
-// Megamenu functions
+// Megamenu functions with timers to prevent flickering
+let openTimer = null
+let closeTimer = null
+
 const showMegamenu = (menu) => {
-  activeMegamenu.value = menu
+  // Cancella qualsiasi timer di chiusura in corso
+  if (closeTimer) {
+    clearTimeout(closeTimer)
+    closeTimer = null
+  }
+
+  // Cancella qualsiasi timer di apertura precedente
+  if (openTimer) {
+    clearTimeout(openTimer)
+    openTimer = null
+  }
+
+  // Apri con un piccolo delay per evitare aperture accidentali
+  openTimer = setTimeout(() => {
+    activeMegamenu.value = menu
+    openTimer = null
+  }, 100)
 }
 
 const hideMegamenu = () => {
+  // Cancella qualsiasi timer in corso
+  if (openTimer) {
+    clearTimeout(openTimer)
+    openTimer = null
+  }
+  if (closeTimer) {
+    clearTimeout(closeTimer)
+    closeTimer = null
+  }
+
   activeMegamenu.value = null
+}
+
+const scheduleMegamenuClose = () => {
+  // Cancella qualsiasi timer di apertura in corso
+  if (openTimer) {
+    clearTimeout(openTimer)
+    openTimer = null
+  }
+
+  // Programma la chiusura con delay per permettere il movimento del mouse
+  closeTimer = setTimeout(() => {
+    activeMegamenu.value = null
+    closeTimer = null
+  }, 250)
+}
+
+const cancelMegamenuClose = () => {
+  // Cancella il timer di chiusura se il mouse rientra nell'area
+  if (closeTimer) {
+    clearTimeout(closeTimer)
+    closeTimer = null
+  }
 }
 
 // Carica le impostazioni del sito
@@ -222,6 +286,8 @@ onUnmounted(() => {
   position: relative;
 }
 
+
+
 .nav-link {
   font-family: var(--font-mono);
   font-size: 14px;
@@ -259,49 +325,114 @@ onUnmounted(() => {
   color: var(--muted);
 }
 
-/* Megamenu Styles */
-.megamenu {
+/* Megamenu Container Unico */
+.megamenu-container {
   position: absolute;
   top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  margin-top: 8px;
+  pointer-events: none;
+}
+
+/* Hover bridge per evitare gap tra nav e megamenu */
+.megamenu-container::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: transparent;
+}
+
+.megamenu-container.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Megamenu Styles */
+.megamenu {
   background: var(--bg);
   border: 1px solid var(--line);
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateX(-50%) translateY(-10px);
-  transition: all 0.3s ease;
-  z-index: 1000;
-  width: clamp(400px, 50vw, 600px);
+  width: 450px;
   max-width: calc(100vw - 40px);
-  margin-top: 8px;
+  margin: 0 auto;
 }
 
-.megamenu.active {
-  opacity: 1;
-  visibility: visible;
-  transform: translateX(-50%) translateY(0);
+/* Megamenu per schermi grandi */
+@media (min-width: 1400px) {
+  .megamenu {
+    width: 480px;
+  }
+
+  .megamenu-content {
+    gap: clamp(18px, 3vw, 24px);
+    padding: clamp(20px, 4vw, 28px);
+  }
+
+  .megamenu-section a {
+    font-size: 15px;
+  }
 }
 
-/* Controllo per evitare che esca dai bordi */
-.nav-item:last-child .megamenu {
-  left: auto;
-  right: 0;
-  transform: translateX(0) translateY(-10px);
+/* Layout specifico per megamenu Contattaci */
+.contatti-megamenu .megamenu-content {
+  grid-template-columns: 1fr 1fr !important;
+  gap: 24px !important;
+  min-height: 140px;
 }
 
-.nav-item:last-child .megamenu.active {
-  transform: translateX(0) translateY(0);
+/* Prima sezione del megamenu contattaci - più spazio */
+.contatti-megamenu .megamenu-section:first-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-right: 8px;
 }
+
+.contatti-megamenu .megamenu-section:first-child p {
+  margin: 6px 0 14px !important;
+  line-height: 1.4 !important;
+  font-size: 13px !important;
+}
+
+/* Seconda sezione del megamenu contattaci - allineamento */
+.contatti-megamenu .megamenu-section:last-child {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 8px;
+}
+
+/* Spacing uniforme per le liste nel megamenu contattaci */
+.contatti-megamenu .megamenu-section ul {
+  margin-bottom: 16px;
+}
+
+.contatti-megamenu .megamenu-section li {
+  margin-bottom: 10px;
+}
+
+
 
 .megamenu-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: clamp(16px, 3vw, 32px);
-  padding: clamp(20px, 4vw, 32px);
+  gap: clamp(12px, 2vw, 20px);
+  padding: clamp(16px, 3vw, 24px);
 }
+
+
 
 /* Section Tags */
 .section-tag {
@@ -370,6 +501,8 @@ onUnmounted(() => {
   margin: 0 0 16px;
 }
 
+
+
 .megamenu-cta {
   display: inline-flex !important;
   align-items: center !important;
@@ -382,12 +515,14 @@ onUnmounted(() => {
   text-decoration: none !important;
   text-transform: uppercase !important;
   letter-spacing: 0.3px !important;
-  padding: 7px 12px !important;
+  padding: 8px 14px !important;
   background: var(--chip-bg) !important;
-  border-radius: 5px !important;
+  border-radius: 6px !important;
   transition: all 0.3s ease !important;
   white-space: nowrap !important;
   text-align: center !important;
+  margin-top: 4px !important;
+  width: fit-content !important;
 }
 
 .megamenu-cta:hover {
@@ -478,6 +613,34 @@ onUnmounted(() => {
   border-bottom: none;
 }
 
+
+
+/* Media query per tablet - megamenu responsive */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .megamenu {
+    width: clamp(350px, 45vw, 450px);
+  }
+
+  .megamenu-content {
+    gap: clamp(10px, 2vw, 18px);
+    padding: clamp(14px, 3vw, 20px);
+  }
+
+  .megamenu-section a {
+    font-size: 13px;
+  }
+
+  /* Megamenu contattaci responsive tablet */
+  .contatti-megamenu .megamenu-content {
+    min-height: 120px;
+  }
+
+  .contatti-megamenu .megamenu-section:first-child p {
+    font-size: 12px !important;
+    margin: 4px 0 12px !important;
+  }
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .navbar-container {
@@ -501,7 +664,7 @@ onUnmounted(() => {
     display: block;
   }
 
-  .megamenu {
+  .megamenu-container {
     display: none;
   }
 }

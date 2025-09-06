@@ -228,5 +228,39 @@
   }
 }
 
+/* Responsive breakpoints per allineamento su schermi grandi */
+/* Large screens - Desktop (≥1200px) */
+@media (min-width: 1200px) {
+  .why-mumble-section h2 {
+    max-width: 50ch;
+  }
+
+  .why-mumble-section .section-subtitle {
+    max-width: 60ch;
+  }
+}
+
+/* Extra Large screens - Large Desktop (≥1400px) */
+@media (min-width: 1400px) {
+  .why-mumble-section h2 {
+    max-width: 55ch;
+  }
+
+  .why-mumble-section .section-subtitle {
+    max-width: 65ch;
+  }
+}
+
+/* Ultra Wide screens (≥1800px) */
+@media (min-width: 1800px) {
+  .why-mumble-section h2 {
+    max-width: 60ch;
+  }
+
+  .why-mumble-section .section-subtitle {
+    max-width: 70ch;
+  }
+}
+
 
 </style>

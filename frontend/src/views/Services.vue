@@ -1,14 +1,13 @@
 <template>
   <div class="services-page">
     <!-- Hero Section -->
-    <section class="services-hero">
+    <section class="services-section">
       <div class="container">
-        <div class="hero-content">
+        <div class="services-hero">
           <div class="eyebrow font-mono">I nostri servizi</div>
           <h1>Risolviamo i problemi che rallentano il tuo business.</h1>
-          <p class="hero-subtitle">
-            Development, integrazioni e gestionali<br>
-            per aziende che vogliono crescere.
+          <p class="lead">
+            Development, integrazioni e gestionali per aziende che vogliono crescere.
           </p>
         </div>
       </div>
@@ -327,19 +326,14 @@
 }
 
 /* Hero Section */
-.services-hero {
-  background: var(--bg);
-  padding: clamp(80px, 10vw, 100px) 0 clamp(40px, 6vw, 60px);
+.services-section {
+  background-color: var(--bg);
+  padding: 80px 0 20px;
   width: 100%;
   position: relative;
 }
 
-.services-hero .container {
-  max-width: 1400px;
-  padding: 0 clamp(40px, 8vw, 120px);
-}
-
-.services-hero::before {
+.services-section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -352,38 +346,39 @@
   transform: translate(50%, -50%);
 }
 
-.hero-content {
+.services-hero {
   text-align: left;
+  margin-bottom: 100px;
   max-width: 900px;
   position: relative;
   z-index: 1;
 }
 
-.hero-content .eyebrow {
+.services-hero .eyebrow {
   color: var(--muted);
   font-size: 14px;
   font-weight: 500;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   margin-bottom: 20px;
   font-family: var(--font-mono);
 }
 
-.hero-content h1 {
-  font-size: clamp(36px, 5vw, 52px);
-  margin: 0 0 24px;
+.services-hero h1 {
+  font-size: 48px;
+  margin: 0 0 28px;
   font-weight: 400;
   line-height: 1.1;
   color: var(--fg);
-  letter-spacing: -0.01em;
+  font-family: var(--font-body);
 }
 
-.hero-subtitle {
-  font-size: clamp(18px, 2vw, 22px);
-  line-height: 1.5;
+.services-hero .lead {
+  font-size: 20px;
+  line-height: 1.6;
   color: var(--muted);
   margin: 0;
-  font-weight: 300;
+  max-width: 70ch;
 }
 
 
@@ -391,7 +386,7 @@
 /* Services Overview Section */
 .services-overview-section {
   background: var(--bg);
-  padding: clamp(40px, 6vw, 60px) 0 clamp(80px, 10vw, 120px);
+  padding: 20px 0 80px;
   width: 100%;
   position: relative;
 }
@@ -430,8 +425,8 @@
 
 .overview-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: clamp(24px, 4vw, 32px);
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 32px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -988,36 +983,34 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .services-hero {
+  .services-section {
     padding: clamp(80px, 10vw, 100px) 0 clamp(60px, 8vw, 80px);
   }
 
-  .services-hero::before {
+  .services-section::before {
     width: 150px;
     height: 150px;
   }
 
-  .hero-content .eyebrow {
+  .services-hero .eyebrow {
     font-size: 14px;
     margin-bottom: 24px;
   }
 
-  .hero-content h1 {
+  .services-hero h1 {
     font-size: clamp(32px, 8vw, 42px);
   }
 
-  .hero-subtitle {
+  .services-hero .lead {
     font-size: clamp(18px, 4vw, 22px);
   }
 
-  .services-hero .container,
-  .services-overview-section .container,
-  .how-we-work-section .container {
+  .container {
     padding: 0 clamp(24px, 6vw, 40px);
   }
 
   .services-overview-section {
-    padding: clamp(32px, 6vw, 40px) 0 clamp(60px, 8vw, 80px);
+    padding: clamp(16px, 3vw, 20px) 0 clamp(60px, 8vw, 80px);
   }
 
   .overview-header {
@@ -1139,6 +1132,95 @@
     align-items: flex-start;
   }
 }
+
+/* Responsive breakpoints per schermi grandi */
+/* Large screens - Desktop (≥1200px) */
+@media (min-width: 1200px) {
+  .services-section {
+    padding: 120px 0 20px;
+  }
+
+  .container {
+    padding: 0 60px;
+  }
+
+  .services-hero {
+    max-width: 900px;
+  }
+
+  .services-hero h1 {
+    font-size: 68px;
+    margin-bottom: 32px;
+  }
+
+  .services-hero .lead {
+    font-size: 22px;
+  }
+
+  .services-overview-section {
+    padding: 20px 0 120px;
+  }
+
+  .overview-grid {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 40px;
+    max-width: 1400px;
+  }
+
+  .overview-card {
+    padding: 40px;
+    min-height: 300px;
+  }
+
+  .overview-card h3 {
+    font-size: 30px;
+  }
+}
+
+/* Extra Large screens - Large Desktop (≥1600px) */
+@media (min-width: 1600px) {
+  .services-section {
+    padding: 160px 0 20px;
+  }
+
+  .container {
+    padding: 0 80px;
+  }
+
+  .services-hero {
+    max-width: 1000px;
+  }
+
+  .services-hero h1 {
+    font-size: 88px;
+    margin-bottom: 40px;
+  }
+
+  .services-hero .lead {
+    font-size: 24px;
+  }
+
+  .services-overview-section {
+    padding: 20px 0 160px;
+  }
+
+  .overview-grid {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 48px;
+    max-width: 1600px;
+  }
+
+  .overview-card {
+    padding: 48px;
+    min-height: 320px;
+  }
+
+  .overview-card h3 {
+    font-size: 36px;
+  }
+}
+
+
 
 
 </style>

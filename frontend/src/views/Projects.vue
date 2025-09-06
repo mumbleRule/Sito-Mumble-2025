@@ -375,14 +375,14 @@ onMounted(async () => {
 
 .projects-section {
   background-color: var(--bg);
-  padding: 80px 0 120px;
+  padding: 80px 0 60px;
   width: 100%;
 }
 
 .projects-hero {
   text-align: left;
-  margin-bottom: 80px;
-  max-width: 800px;
+  margin-bottom: 100px;
+  max-width: 900px;
 }
 
 .projects-hero .eyebrow {
@@ -391,15 +391,17 @@ onMounted(async () => {
   font-weight: 500;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
+  font-family: var(--font-mono);
 }
 
 .projects-hero h1 {
-  font-size: clamp(40px, 5vw, 56px);
-  margin: 0 0 24px;
+  font-size: 48px;
+  margin: 0 0 28px;
   font-weight: 400;
   line-height: 1.1;
   color: var(--fg);
+  font-family: var(--font-body);
 }
 
 .projects-hero .lead {
@@ -407,6 +409,7 @@ onMounted(async () => {
   line-height: 1.6;
   color: var(--muted);
   margin: 0;
+  max-width: 70ch;
 }
 
 .projects-content {
@@ -430,7 +433,7 @@ onMounted(async () => {
   display: flex;
   flex-direction: column;
   gap: 80px;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
 }
 
 .category-section {
@@ -441,7 +444,8 @@ onMounted(async () => {
 
 .category-header {
   text-align: left;
-  max-width: 800px;
+  max-width: 900px;
+  margin-bottom: 60px;
 }
 
 .category-tag {
@@ -452,7 +456,7 @@ onMounted(async () => {
   border-radius: 6px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   display: inline-block;
   color: white;
 }
@@ -470,10 +474,11 @@ onMounted(async () => {
 }
 
 .category-header h2 {
-  font-size: clamp(28px, 4vw, 36px);
-  margin: 0 0 16px;
-  font-weight: 400;
+  font-size: 32px;
+  margin: 0 0 20px;
+  font-weight: 500;
   color: var(--fg);
+  font-family: var(--font-mono);
 }
 
 .category-header p {
@@ -481,13 +486,14 @@ onMounted(async () => {
   line-height: 1.6;
   color: var(--muted);
   margin: 0;
+  max-width: 70ch;
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
   gap: 32px;
-  margin-top: 40px;
+  margin-top: 0;
 }
 
 .projects-page .projects-grid .project-card {
@@ -578,11 +584,17 @@ onMounted(async () => {
 .tech-tag {
   background: var(--line);
   color: var(--muted);
-  padding: 4px 12px;
+  padding: 6px 12px;
   border-radius: 16px;
   font-size: 12px;
   font-weight: 500;
   font-family: var(--font-mono);
+  transition: all 0.2s ease;
+}
+
+.tech-tag:hover {
+  background: var(--sage);
+  color: white;
 }
 
 .project-link {
@@ -617,17 +629,18 @@ onMounted(async () => {
 /* Sezione Il nostro approccio */
 .approach-section {
   background: var(--chip-bg);
-  padding: 40px 0 80px;
+  padding: 80px 0;
 }
 
 .approach-content {
-  /* Rimosso max-width per allineare con la CTA finale */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .approach-header {
   text-align: left;
-  margin-bottom: 60px;
-  max-width: 600px;
+  margin-bottom: 80px;
+  max-width: 700px;
 }
 
 .approach-header .eyebrow {
@@ -641,9 +654,10 @@ onMounted(async () => {
 
 .approach-header h2 {
   font-size: 32px;
-  margin: 0 0 16px;
+  margin: 0 0 20px;
   color: var(--fg);
   font-family: var(--font-mono);
+  font-weight: 500;
 }
 
 .approach-lead {
@@ -660,14 +674,23 @@ onMounted(async () => {
 
 .approach-steps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 48px;
 }
 
 .step-item {
   display: flex;
   gap: 20px;
   align-items: flex-start;
+  padding: 24px;
+  border-radius: 12px;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  transition: all 0.2s ease;
+}
+
+.step-item:hover {
+  border-color: var(--warm-clay);
 }
 
 .step-number {
@@ -676,7 +699,7 @@ onMounted(async () => {
   height: 48px;
   background: var(--warm-clay);
   color: white;
-  border-radius: 50%;
+  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -748,30 +771,40 @@ onMounted(async () => {
 .tech-grid {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  gap: 16px;
+  gap: 24px;
   max-width: 900px;
+  justify-items: center;
 }
 
 .tech-logo-item {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--chip-bg);
+  border: 1px solid var(--line);
   transition: all 0.3s ease;
+  width: 100%;
+  aspect-ratio: 1;
 }
 
 .tech-logo-item:hover {
-  transform: scale(1.1);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-color: var(--sage);
 }
 
 .tech-logo {
-  width: 56px;
-  height: 56px;
+  width: 48px;
+  height: 48px;
   transition: all 0.3s ease;
-  filter: grayscale(0.3);
+  filter: grayscale(0.2);
 }
 
 .tech-logo-item:hover .tech-logo {
   filter: grayscale(0);
+  transform: scale(1.1);
 }
 
 /* Tech name rimosso - solo loghi */
@@ -817,10 +850,12 @@ onMounted(async () => {
 
   .projects-hero {
     margin-bottom: 60px;
+    max-width: 100%;
   }
 
   .projects-hero h1 {
-    font-size: clamp(32px, 8vw, 40px);
+    font-size: 36px;
+    margin-bottom: 20px;
   }
 
   .projects-hero .lead {
@@ -832,12 +867,18 @@ onMounted(async () => {
     padding-bottom: 60px;
   }
 
-  .category-section {
-    gap: 32px;
+  .projects-by-category {
+    gap: 60px;
+  }
+
+  .category-header {
+    margin-bottom: 40px;
+    max-width: 100%;
   }
 
   .category-header h2 {
     font-size: 28px;
+    margin-bottom: 16px;
   }
 
   .category-header p {
@@ -876,27 +917,33 @@ onMounted(async () => {
     padding: 60px 0;
   }
 
+  .approach-section {
+    padding: 60px 0;
+  }
+
   .approach-header {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
   }
 
   .approach-steps {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 24px;
   }
 
   .step-item {
-    gap: 16px;
+    padding: 24px;
   }
 
   .step-number {
-    width: 40px;
-    height: 40px;
-    font-size: 14px;
+    width: 48px;
+    height: 48px;
+    font-size: 16px;
+    margin-bottom: 20px;
   }
 
   .step-content h3 {
-    font-size: 16px;
+    font-size: 18px;
+    margin-bottom: 12px;
   }
 
   .step-content p {
@@ -915,16 +962,16 @@ onMounted(async () => {
 
   .tech-grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
+    gap: 16px;
   }
 
   .tech-logo-item {
-    padding: 8px;
+    padding: 12px;
   }
 
   .tech-logo {
-    width: 48px;
-    height: 48px;
+    width: 40px;
+    height: 40px;
   }
 }
 
@@ -936,6 +983,222 @@ onMounted(async () => {
   .project-card {
     margin: 0 -20px;
     border-radius: 0;
+  }
+}
+
+/* Responsive breakpoints per schermi grandi */
+/* Desktop (≥1200px) */
+@media (min-width: 1200px) {
+  .projects-section {
+    padding: 120px 0 80px;
+  }
+
+  .projects-hero {
+    margin-bottom: 120px;
+    max-width: 1000px;
+  }
+
+  .projects-hero h1 {
+    font-size: 64px;
+    margin-bottom: 32px;
+  }
+
+  .projects-hero .lead {
+    font-size: 22px;
+  }
+
+  /* Sezioni progetti */
+  .projects-by-category {
+    gap: 100px;
+  }
+
+  .category-header {
+    max-width: 1000px;
+    margin-bottom: 80px;
+  }
+
+  .category-header h2 {
+    font-size: 40px;
+    margin-bottom: 24px;
+  }
+
+  .category-header p {
+    font-size: 20px;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    gap: 40px;
+  }
+
+  .approach-section {
+    padding: 120px 0;
+  }
+
+  .approach-header h2 {
+    font-size: 40px;
+  }
+
+  .approach-lead {
+    font-size: 20px;
+  }
+
+  .approach-steps {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .step-item {
+    padding: 32px;
+    gap: 24px;
+  }
+
+  .step-number {
+    width: 52px;
+    height: 52px;
+    font-size: 18px;
+  }
+
+  .step-content h3 {
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .step-content p {
+    font-size: 17px;
+  }
+
+  .tech-section {
+    padding: 120px 0;
+  }
+
+  .tech-header h2 {
+    font-size: 40px;
+  }
+
+  .tech-lead {
+    font-size: 20px;
+  }
+
+  .tech-grid {
+    gap: 32px;
+    max-width: 1000px;
+  }
+
+  .tech-logo-item {
+    padding: 20px;
+  }
+
+  .tech-logo {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* Large Desktop (≥1600px) */
+@media (min-width: 1600px) {
+  .projects-section {
+    padding: 160px 0 100px;
+  }
+
+  .projects-hero {
+    margin-bottom: 160px;
+    max-width: 1200px;
+  }
+
+  .projects-hero h1 {
+    font-size: 80px;
+    margin-bottom: 40px;
+  }
+
+  .projects-hero .lead {
+    font-size: 24px;
+  }
+
+  /* Sezioni progetti */
+  .projects-by-category {
+    gap: 120px;
+  }
+
+  .category-header {
+    max-width: 1200px;
+    margin-bottom: 100px;
+  }
+
+  .category-header h2 {
+    font-size: 48px;
+    margin-bottom: 28px;
+  }
+
+  .category-header p {
+    font-size: 22px;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 48px;
+  }
+
+  .approach-section {
+    padding: 160px 0;
+  }
+
+  .approach-header h2 {
+    font-size: 48px;
+  }
+
+  .approach-lead {
+    font-size: 22px;
+  }
+
+  .approach-steps {
+    gap: 48px;
+  }
+
+  .step-item {
+    padding: 40px;
+    gap: 28px;
+  }
+
+  .step-number {
+    width: 56px;
+    height: 56px;
+    font-size: 20px;
+  }
+
+  .step-content h3 {
+    font-size: 22px;
+    margin-bottom: 18px;
+  }
+
+  .step-content p {
+    font-size: 18px;
+  }
+
+  .tech-section {
+    padding: 160px 0;
+  }
+
+  .tech-header h2 {
+    font-size: 48px;
+  }
+
+  .tech-lead {
+    font-size: 22px;
+  }
+
+  .tech-grid {
+    gap: 40px;
+    max-width: 1200px;
+  }
+
+  .tech-logo-item {
+    padding: 24px;
+  }
+
+  .tech-logo {
+    width: 64px;
+    height: 64px;
   }
 }
 </style>

@@ -178,4 +178,27 @@ onMounted(async () => {
 .service-card:visited {
   color: inherit;
 }
+
+/* Responsive Design Semplice */
+/* Desktop (≥1200px) */
+@media (min-width: 1200px) {
+  .services-cta .cta-title {
+    font-size: 28px;
+  }
+
+  .services-cta .cta-description {
+    font-size: 18px;
+  }
+}
+
+/* Large Desktop (≥1600px) */
+@media (min-width: 1600px) {
+  .services-cta .cta-title {
+    font-size: 32px;
+  }
+
+  .services-cta .cta-description {
+    font-size: 20px;
+  }
+}
 </style>
